@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  get 'courts/show'
+
+  get 'courts/index'
+
   resources :users, only: [:index, :show] do
     resources :matches, only: [:create]
   end
 
-  resources :matches, only: [:show, :update, :edit]
+  resources :matches, only: [:show, :update]
+
+  resources :courts, only: [:show, :index]
   # get 'matches/show'
 
   # get 'matches/create'
