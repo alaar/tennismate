@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
-  get 'matches/show'
+  resources :users, only: [:index, :show] do
+    resources :matches, only: [:create]
+  end
 
-  get 'matches/create'
+  resources :matches, only: [:show, :update, :edit]
+  # get 'matches/show'
 
-  get 'matches/update'
+  # get 'matches/create'
 
-  get 'users/show'
+  # get 'matches/update'
 
-  get 'users/index'
+  # get 'users/show'
 
-  get 'pages/home'
+  # get 'users/index'
+
+  # get 'pages/home'
 
   devise_for :users
   root to: 'pages#home'
