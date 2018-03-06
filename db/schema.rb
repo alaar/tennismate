@@ -62,6 +62,9 @@ ActiveRecord::Schema.define(version: 20180306192420) do
     t.string "gender", default: "other"
     t.integer "skill_level", default: 1
     t.integer "age"
+    t.float "latitude"
+    t.float "longitude"
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -64,6 +64,7 @@ GEM
       thor (~> 0.14)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
+    geocoder (1.4.6)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.5)
@@ -98,6 +99,8 @@ GEM
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     puma (3.11.2)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.4)
     rack-proxy (0.6.4)
       rack
@@ -191,12 +194,14 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-sass (~> 4.7)
+  geocoder
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
   pg (~> 0.21)
   pry-byebug
   pry-rails
   puma
+  pundit
   rails (= 5.1.5)
   redis
   sass-rails
