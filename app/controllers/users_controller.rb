@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
   # skip_before_action :authenticate_user!
+=======
+  skip_before_action :authenticate_user!
+  before_action :set_user, only: [:show]
+>>>>>>> 0a611823654cc63500cfbcba78d6454d7cc937dd
 
   def show
     authorize @user
-
+    @user = User.new()
   end
 
   def index
@@ -18,40 +23,21 @@ class UsersController < ApplicationController
       }
     end
 
+<<<<<<< HEAD
     # @users = policy_scope(User).order(created_at: :desc)
 
+=======
+    # @offers = policy_scope(Offer).order(created_at: :desc)
+>>>>>>> 0a611823654cc63500cfbcba78d6454d7cc937dd
   end
 
-  # def new
-  #   @user = User.new
-  #   authorize @user
-  # end
 
-  # def create
-  #   @user = User.new(user_params)
-  #   @user = current_user
-  #   authorize @user
 
-  #   if @user.save!
-  #     redirect_to users_path
-  #   end
-  # end
-
-  # def destroy
-  #   if @user.matches.empty?
-  #     @user.destroy!
-  #     redirect_to users_path
-  #   else
-  #     redirect_to user_path(@user)
-  #   end
-  # end
-
-  # def update
-  #   @user.update(user_params)
-  #   redirect_to_ user_path(@user)
-  # end
-
-  private
+private
+  def set_user
+    @user = User.find(params[:id])
+    authorize @user
+  end
 
 
 end
