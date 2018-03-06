@@ -2,20 +2,16 @@
   <div class="container white-page">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <%= cl_image_tag(@offer.photo, height: 300, width: 400, crop: :fill, :id => "show-image") rescue nil %>
+
 
         <div class="show-info">
         <h2> Name: <%= @user.first_name %> <%= @user.last_name %> </h2>
         <h2> Email: <%= @user.email %> </h2>
-        <h2> Rating: $<%= @user.skil_level %> </h2>
+        <h2> Rating: <%= @user.skill_level %> </h2>
         </div>
 
 
-        <% if @user != current_user %>
-          <%= simple_form_for [@offer, @appointment] do |f| %>
-            <%= f.submit "Send a request", class: "btn btn-primary center-btn"%>
-          <% end %>
-        <% end %>
+
       </div>
     </div>
   </div>
