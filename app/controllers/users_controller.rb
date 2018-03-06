@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
+  # skip_before_action :authenticate_user!
+=======
   skip_before_action :authenticate_user!
   before_action :set_user, only: [:show]
+>>>>>>> 0a611823654cc63500cfbcba78d6454d7cc937dd
 
   def show
     authorize @user
@@ -19,7 +23,12 @@ class UsersController < ApplicationController
       }
     end
 
+<<<<<<< HEAD
+    # @users = policy_scope(User).order(created_at: :desc)
+
+=======
     # @offers = policy_scope(Offer).order(created_at: :desc)
+>>>>>>> 0a611823654cc63500cfbcba78d6454d7cc937dd
   end
 
 
