@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
-  skip_before_action :authenticate_user!
-=======
->>>>>>> 6e8235433759f8e1694745a7e280421a07fe4f6b
+  # skip_before_action :authenticate_user!
 
   def show
     authorize @user
@@ -10,7 +7,6 @@ class UsersController < ApplicationController
   end
 
   def index
-<<<<<<< HEAD
     # @users = User.all
 
     @users = User.where.not(latitude: nil, longitude: nil)
@@ -21,9 +17,9 @@ class UsersController < ApplicationController
         lng: user.longitude
       }
     end
-=======
-    @offers = policy_scope(Offer).order(created_at: :desc)
->>>>>>> 6e8235433759f8e1694745a7e280421a07fe4f6b
+
+    # @users = policy_scope(User).order(created_at: :desc)
+
   end
 
   # def new
