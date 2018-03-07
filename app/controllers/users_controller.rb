@@ -4,10 +4,10 @@ class UsersController < ApplicationController
 
   def show
     authorize @user
-    # @user = User.new()
   end
 
   def index
+
     # @users = User.all
 
     # @users = User.where.not(latitude: nil, longitude: nil)
@@ -22,9 +22,8 @@ class UsersController < ApplicationController
 
     # @offers = policy_scope(Offer).order(created_at: :desc)
     possible_index
+
   end
-
-
 
 private
   def set_user

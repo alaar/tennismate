@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180307181032) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 20180307181032) do
     t.integer "skill_level", default: 1
     t.integer "age"
     t.boolean "admin"
+    t.string "photo"
     t.string "radius"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -1,0 +1,10 @@
+#map {
+  box-shadow:4px 4px 5px rgba(20%,20%,40%,0.5);
+  margin-top: 20px;
+}
+
+.map-row {
+  z-index: 2;
+  position: sticky !important;
+  top: 0 !important;
+}
