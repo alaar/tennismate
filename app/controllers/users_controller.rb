@@ -19,7 +19,8 @@ class UsersController < ApplicationController
       }
     end
 
-    # @offers = policy_scope(Offer).order(created_at: :desc)
+    @users = policy_scope(User).order(created_at: :desc)
+
   end
 
 
