@@ -5,6 +5,7 @@
 
 
         <div class="show-info">
+        <%= cl_image_tag(@user.photo, height: 300, width: 400, crop: :fill, :id => "show-image") rescue nil %>
         <h2> Name: <%= @user.first_name %> <%= @user.last_name %> </h2>
         <h2> Email: <%= @user.email %> </h2>
         <h2> Rating: <%= @user.skill_level %> </h2>
