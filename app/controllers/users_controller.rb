@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_user, only: [:show]
 
   def show
@@ -9,7 +9,9 @@ class UsersController < ApplicationController
   def index
     # @users = User.all
 
-    @users = User.where.not(latitude: nil, longitude: nil)
+    # @users = User.where.not(latitude: nil, longitude: nil)
+    @users = policy_scope(User).order(created_at: :desc)
+
 
     @markers = @users.map do |user|
       {
@@ -17,9 +19,6 @@ class UsersController < ApplicationController
         lng: user.longitude
       }
     end
-
-    @users = policy_scope(User).order(created_at: :desc)
-
   end
 
 
@@ -27,7 +26,6 @@ class UsersController < ApplicationController
 private
   def set_user
     @user = User.find(params[:id])
-    authorize @user
   end
 
 
