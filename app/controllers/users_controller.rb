@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     # @users = User.all
 
     # @users = User.where.not(latitude: nil, longitude: nil)
-    @users = policy_scope(User).order(created_at: :desc)
+    @users = policy_scope(User).order(created_at: :desc) && User.where.not(latitude: nil, longitude: nil)
 
 
     @markers = @users.map do |user|
