@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   has_many :availabilities
   has_many :match
   # Include default devise modules. Others available are:
