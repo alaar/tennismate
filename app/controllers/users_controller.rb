@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       }
     end
 
-    # @users = policy_scope(User).order(created_at: :desc)
+    @users = policy_scope(User).order(created_at: :desc)
 
   end
 
