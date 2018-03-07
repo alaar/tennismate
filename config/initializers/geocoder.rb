@@ -1,3 +1,4 @@
+puts "Initializing geocoder!!!!!"
 Geocoder.configure(
   # Geocoding options
   # timeout: 3,                 # geocoding service timeout (secs)
@@ -26,3 +27,4 @@ Geocoder.configure(
 
   use_https: true
 )
+puts "finished!!!"
