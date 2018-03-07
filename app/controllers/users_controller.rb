@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
   def show
     authorize @user
-    @user = User.new()
   end
 
   def index
