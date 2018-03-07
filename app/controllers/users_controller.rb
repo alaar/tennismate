@@ -43,7 +43,7 @@ private
     if current_user
       Court.near(current_user.address, current_user.radius)
     else
-      Court.all
+      Court.where.not(latitude: nil, longitude: nil)
     end
   end
 
