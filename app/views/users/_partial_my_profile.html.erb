@@ -6,6 +6,7 @@
     <%= f.input :last_name, required: true, autofocus: true %>
     <%= f.input :age, required: true, autofocus: true %>
     <%= f.input :gender, as: :radio_buttons, collection: [['0', 'female'], ['1', 'male'], ['2', 'other']], label_method: :second, value_method: :last %>    <%= f.input :skill_level, :collection => 1..14 %>
+    <%= f.input :radius, autofocus: true %>
     <%= f.input :availabilities, required: true, autofocus: true %>
   </div>
 

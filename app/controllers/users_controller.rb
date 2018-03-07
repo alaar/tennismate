@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_user, only: [:show]
 
   def show
     authorize @user
-    @user = User.new()
+    # @user = User.new()
   end
 
   def index
@@ -27,7 +27,6 @@ class UsersController < ApplicationController
 private
   def set_user
     @user = User.find(params[:id])
-    authorize @user
   end
 
 
