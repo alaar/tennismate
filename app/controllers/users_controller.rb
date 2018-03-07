@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def index
+
     # @users = User.all
 
     @users = User.where.not(latitude: nil, longitude: nil)
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
       }
     end
 
-    @users = policy_scope(User).order(created_at: :desc)
+    # @users = policy_scope(User).order(created_at: :desc)
 
   end
 
