@@ -1,9 +1,14 @@
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="[<%= @marker.to_json %>]"
-></div>
-
-<h4><%= @court.name %></h3>
-<p><%= @court.address %></p>
+<div class="container court-show">
+  <div class="row map-row">
+    <div class="col-xs-12">
+    <div
+      id="map"
+      style="width: 100%;
+      height: 35vh;"
+      data-markers="[<%= @marker.to_json %>]"
+    ></div>
+    </div>
+  </div>
+  <h6><%= "Court: " + @court.name %></h6>
+  <p><strong><%="Address:"%></strong><br><%= @court.address %></p>
+</div>

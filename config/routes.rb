@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+<<<<<<< HEAD
   resources :users, only: [:index, :show, :update, :edit] do
+=======
+  resources :users, only: [:index, :show, :update] do
+>>>>>>> master
     resources :matches, only: [:create]
   end
 
