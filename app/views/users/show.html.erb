@@ -1,10 +1,20 @@
-<h4><%= @user.first_name %></h4>
-<p>Gender: <%= @user.gender %></p>
-<p>Age: <%= @user.age %></p>
-<p>Skill level: <%= @user.skill_level %></p>
+<div class="container white-page">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="show-info">
+        <%= cl_image_tag(@user.photo, height: 300, width: 400, crop: :fill, :id => "show-image") rescue nil %>
+        <h2><%= @user.first_name %></h2>
+        <h2>Gender: <%= @user.gender %></h2>
+        <h2>Age: <%= @user.age %></h2>
+        <h2>Skill level: <%= @user.skill_level %></h2>
 
-<% if @user == current_user %>
-  <%= link_to "Edit your profile", edit_user_path %>
-<% else %>
-  <%= link_to "Request match" %>
-<% end %>
+        <% if @user == current_user %>
+          <%= link_to "Edit your profile", edit_user_path %>
+        <% else %>
+          <%= link_to "Request match" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
