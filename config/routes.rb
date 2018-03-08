@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   get 'courts/index'
 
   devise_for :users
-  
+
   root to: 'pages#home'
 
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:index, :show, :update] do
     resources :matches, only: [:create]
   end
 
