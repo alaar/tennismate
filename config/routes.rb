@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
-  get 'courts/show'
-
-  get 'courts/index'
 
   devise_for :users
 
   root to: 'pages#home'
 
+<<<<<<< HEAD
+  resources :users, only: [:index, :show, :update, :edit] do
+=======
   resources :users, only: [:index, :show, :update] do
+>>>>>>> master
     resources :matches, only: [:create]
   end
 
   resources :matches, only: [:show, :update]
 
   resources :courts, only: [:show, :index]
+
   # get 'matches/show'
 
   # get 'matches/create'

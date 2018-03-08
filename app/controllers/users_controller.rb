@@ -1,8 +1,19 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_user, only: [:show, :update]
+  before_action :set_user, only: [:show, :edit, :update]
 
   def show
+    # if @user == current_user, display user profile with option to edit
+      authorize @user
+    # if not @user != current_user, display opponent profile with send request button
+
+  end
+
+  def edit
+    authorize @user
+  end
+
+  def update
     authorize @user
   end
 

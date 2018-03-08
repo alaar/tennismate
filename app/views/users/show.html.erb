@@ -1,8 +1,9 @@
-<h3><%= current_user.first_name %></h3>
+<h4><%= @user.first_name %></h4>
+<p>Skill level: <%= @user.skill_level %></p>
 
-<% if current_user == @user %>_
-  <%= render "partial_my_profile"%>
+
+<% if @user == current_user %>
+  <%= link_to "Edit your profile", edit_user_path %>
 <% else %>
-  raise
-  <%= render 'shared/show_user_other' %>
+  <%= link_to "Request match" %>
 <% end %>
