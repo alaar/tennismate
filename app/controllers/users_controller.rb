@@ -55,7 +55,7 @@ private
     users = []
     my_courts.each do |court|
       users_near_court(court).each do |user|
-        users << user
+        users << user unless user == current_user
       end
     end
     return users.uniq
