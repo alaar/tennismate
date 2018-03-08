@@ -12,7 +12,7 @@
         <% if @user == current_user %>
           <%= link_to "Edit your profile", edit_user_path %>
         <% else %>
-          <%= link_to "Request match" %>
+          <%= render "matches/new" %>
         <% end %>
       </div>
 
