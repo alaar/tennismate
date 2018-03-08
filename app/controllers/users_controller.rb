@@ -1,31 +1,45 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :edit, :update]
 
   def show
+    # if @user == current_user, display user profile with option to edit
+      authorize @user
+    # if not @user != current_user, display opponent profile with send request button
+
+  end
+
+  def edit
+    authorize @user
+  end
+
+  def update
     authorize @user
   end
 
   def index
-
     # @users = User.all
-
     # @users = User.where.not(latitude: nil, longitude: nil)
-
     # @markers = @users.map do |user|
     #   {
     #     lat: user.latitude,
     #     lng: user.longitude
     #   }
-
     # end
-
     # @offers = policy_scope(Offer).order(created_at: :desc)
     possible_index
+  end
 
+  def update
+    @user.update_attributes!(user_params)
+    redirect_to user_path(@user)
   end
 
 private
+  def user_params
+    params.require(:user).permit(:gender, :skill_level, :age, :address, :radius, :photo)
+  end
+
   def set_user
     @user = User.find(params[:id])
   end
@@ -52,7 +66,7 @@ private
     users = []
     my_courts.each do |court|
       users_near_court(court).each do |user|
-        users << user
+        users << user unless user == current_user
       end
     end
     return users.uniq

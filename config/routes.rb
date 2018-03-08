@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'courts/show'
-
-  get 'courts/index'
 
   devise_for :users
 
-  resources :users, only: [:index, :show] do
+  root to: 'pages#home'
+
+  resources :users, only: [:index, :show, :update, :edit] do
+
     resources :matches, only: [:create]
   end
 
@@ -13,11 +13,13 @@ Rails.application.routes.draw do
 
   resources :courts, only: [:show, :index]
 
+
   authenticated :user do
     root 'users#index', as: :authenticated_root
   end
 
   root to: 'pages#home'
+
   # get 'matches/show'
 
   # get 'matches/create'
