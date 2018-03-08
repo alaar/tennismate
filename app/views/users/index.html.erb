@@ -11,7 +11,7 @@
       <% @users.each do |user| %>
         <div class="col-xs-4 user_each">
           <div class="thumbnail user-photo" style="width: 90px; height: 90px;" >
-            <%= user.photo %>
+            <%= image_tag user.photo %>
           </div>
           <h6><%= user.first_name %></h6>
           <p>Skill level: <strong><%= user.skill_level %></strong></p>
