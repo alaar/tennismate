@@ -4,6 +4,8 @@
       <div class="show-info">
         <%= cl_image_tag(@user.photo, height: 300, width: 400, crop: :fill, :id => "show-image") rescue nil %>
         <h2><%= @user.first_name %></h2>
+        <h2>Gender: <%= @user.gender %></h2>
+        <h2>Age: <%= @user.age %></h2>
         <h2>Skill level: <%= @user.skill_level %></h2>
 
         <% if @user == current_user %>
