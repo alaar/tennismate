@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root to: 'pages#home'
+  # root to: 'pages#home' (need to delete this one, it's added on line 21)
 
   resources :users, only: [:index, :show, :update, :edit] do
 
