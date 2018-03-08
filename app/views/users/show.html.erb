@@ -6,7 +6,7 @@
         <h2>Name: <%= @user.first_name %></h2>
         <h2>Gender: <%= @user.gender %></h2>
         <h2>Age: <%= @user.age %></h2>
-        <h2>Skill level: <%= @user.skill_level %></h2>
+        <h2>Skill Level: <%= @user.skill_level %></h2>
 
         <% if @user == current_user %>
           <%= link_to "Edit your profile", edit_user_path %>
