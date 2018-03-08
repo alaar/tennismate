@@ -15,4 +15,12 @@ class User < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   mount_uploader :photo, PhotoUploader
+
+  def shared_courts(user)
+    my_courts = Court.near(address, radius)
+    opponent_courts = Court.near(user.address, user.radius)
+    my_courts.select do |court|
+      opponent_courts.include?(court)
+    end
+  end
 end

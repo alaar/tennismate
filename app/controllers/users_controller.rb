@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   def show
     # if @user == current_user, display user profile with option to edit
       authorize @user
-    # if not @user != current_user, display opponent profile with send request button
-
+    # if noth @user != current_user, display opponent profile with send request button
+    @match = Match.new()
   end
 
   def edit

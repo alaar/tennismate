@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:index, :show, :update, :edit] do
-
     resources :matches, only: [:create]
   end
 
@@ -16,7 +15,6 @@ Rails.application.routes.draw do
 
   # get 'matches/show'
 
-  # get 'matches/create'
 
   # get 'matches/update'
 
