@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   get 'courts/index'
 
   devise_for :users
-  
-  root to: 'pages#home'
 
   resources :users, only: [:index, :show] do
     resources :matches, only: [:create]
@@ -14,6 +12,12 @@ Rails.application.routes.draw do
   resources :matches, only: [:show, :update]
 
   resources :courts, only: [:show, :index]
+
+  authenticated :user do
+    root 'users#index', as: :authenticated_root
+  end
+
+  root to: 'pages#home'
   # get 'matches/show'
 
   # get 'matches/create'
