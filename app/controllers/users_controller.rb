@@ -48,6 +48,7 @@ private
   # method returns an array of users whose radius includes a given court based
   def users_near_court(court)
     users = User.where.not(latitude: nil, longitude: nil)
+    p users
     users.select do |user|
       Court.near(user.address, user.radius).include?(court)
     end

@@ -1,0 +1,16 @@
+.match-show-profile-picture-container{
+  display: flex;
+  width: 180px;
+  margin: 0 auto;
+  margin-top: 20px;
+  #show-image-1{
+    position: relative;
+    left: 10px;
+    border-radius: 50%;
+  }
+  #show-image-2{
+    position: relative;
+    right: 10px;
+    border-radius: 50%;
+  }
+}
