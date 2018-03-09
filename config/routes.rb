@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :matches, only: [:create]
   end
 
-  resources :matches, only: [:show, :update]
+  resources :matches, only: [:show, :update, :index]
 
   resources :courts, only: [:show, :index]
 

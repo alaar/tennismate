@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
   has_many :availabilities
-  has_many :match
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
@@ -22,5 +22,13 @@ class User < ApplicationRecord
     my_courts.select do |court|
       opponent_courts.include?(court)
     end
+  end
+
+  def approver_matches
+    Match.where(approver: self)
+  end
+
+  def requester_matches
+    Match.where(requester: self)
   end
 end

@@ -48,13 +48,14 @@ private
   # method returns an array of users whose radius includes a given court based
   def users_near_court(court)
     users = User.where.not(latitude: nil, longitude: nil)
+    p users
     users.select do |user|
       Court.near(user.address, user.radius).include?(court)
     end
   end
 
   #return courts that are whithin my radius
-  def my_courts
+  def find_my_courts
     if current_user
       Court.near(current_user.address, current_user.radius)
     else
@@ -63,7 +64,7 @@ private
   end
 
   #return all players that are within the radius of the courts I am willing to play at
-  def players_near_me
+  def players_near_me(my_courts)
     users = []
     my_courts.each do |court|
       users_near_court(court).each do |user|
@@ -74,7 +75,9 @@ private
   end
 
   def possible_index
-    @users = players_near_me
+    my_courts = find_my_courts
+
+    @users = players_near_me(my_courts)
 
     @markers = my_courts.map do |court|
       {
