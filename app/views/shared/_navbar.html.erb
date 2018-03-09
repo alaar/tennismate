@@ -59,6 +59,9 @@
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
+              <%= link_to users_path(current_user) do %>
+                <i class="fa fa-users"></i>  <%= t(".search", default: "Search") %>
+              <% end %>
             <li>
               <%= link_to match_path(current_user) do %>
                 <i class="fa fa-users"></i>  <%= t(".matches", default: "Matches") %>
