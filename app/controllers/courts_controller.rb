@@ -12,5 +12,12 @@ class CourtsController < ApplicationController
   end
 
   def index
+    @courts = Court.where.not(latitude: nil, longitude: nil)
+    @markers = @courts.map do |court|
+      {
+        lat: court.latitude,
+        lng: court.longitude
+      }
+    end
   end
 end
