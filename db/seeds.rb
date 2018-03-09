@@ -36,7 +36,7 @@ paul = User.create!(age: 30, radius: 1, first_name: "Paul", last_name: "Szkwarek
 derek = User.create!(age: 23, radius: 5, first_name: "Derek", last_name: "Nugroho", email: "derek@email.com", password: "secret", skill_level: 1, address: "1297 Foret Rd, Outremont, QC H2V 2P9", photo: Rails.root.join("app/assets/images/Derek.png").open)
 pete = User.create!(age: 47, radius:20, first_name: "Pete", last_name: "Sampra", email: "pete@email.com", password: "secret", skill_level: 14, address: "125 Ontario Street East, Montreal, QC H2X 1G9", photo: Rails.root.join("app/assets/images/pete.jpg").open)
 novak = User.create!(age: 32, radius: 10, first_name: "Novak", last_name: "Djokovic", email: "novak@email.com", password: "secret", skill_level: 13, address: "1500 Basin Street Montreal, QC H3C 0N3", photo: Rails.root.join("app/assets/images/novak.jpg").open)
-serena = User.create!(age: 29, radius: 10, first_name: "Serena", last_name: "Williams", email: "serena@email.com", password: "secret", skill_level: 12, address: "66 Saint Viateur street Ouest, Montreal, QC H2T 2K8", photo: Rails.root.join("app/assets/images/serena.png").open)
+serena = User.create!(age: 29, radius: 10, first_name: "Serena", last_name: "Williams", email: "serena@email.com", password: "secret", skill_level: 12, address: "66 Saint Viateur street Ouest, Montreal, QC H2T 2K8", photo: Rails.root.join("app/assets/images/serena.jpg").open)
 roger = User.create!(age: 32, radius: 5, first_name: "Roger", last_name: "Federer", email: "roger@email.com", password: "secret", skill_level: 14, address: "4585 Sherbrooke Street Ouest, Outremont, QC H3Z 1E9", photo: Rails.root.join("app/assets/images/roger.jpg").open)
 
 
