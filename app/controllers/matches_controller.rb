@@ -1,6 +1,10 @@
 class MatchesController < ApplicationController
 
-  before_action :set_match, only: [:show, :update, :edit]
+  before_action :set_match, only: [:show, :update, :edit
+  skip_before_action :verify_policy_scoped
+
+  def index
+  end
 
   def show
     authorize @match
