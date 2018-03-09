@@ -15,6 +15,18 @@ puts 'Creating courts'
 viateur = Court.create!(name: 'Tennis St-Viateur', address: '530 Avenue Querbes, Outremont, QC H2V 3W5')
 lafontaine = Court.create!(name: 'Tennis Lafontaine', address: '3500 Avenue Emile-Duploye, Montreal, QC H2L 2T6')
 indoor = Court.create!(name: 'Montreal Indoor Tennis Club', address: '4094 Cote-des-Neiges Rd, Montreal, QC H3H 1W8')
+lasalle = Court.create!(name: 'Arrondissement de LaSalle', address: 'Centre de tennis Cavelier 330, 80e Ave Lasalle, Quebec H8R 4A8')
+monkland = Court.create!(name: 'Monkland Tennis Club', address: '4225 Ave Royal Montreal, Quebec H4A 3R9')
+devon = Court.create!(name: 'Park Devon', address: '792 Ave Upper Belmont Westmount, Quebec H3Y 1J9')
+jeanne = Court.create!(name: 'Parc Jeanne-Mance', address: "4422 de L'Esplanade Montreal, Quebec H2W 1B9")
+mcgill = Court.create!(name: 'McGill Sports Complex', address: "475 Pine Ave W Montreal, Quebec H2W 1S4")
+beubian = Court.create!(name: 'Parc Beaubien', address: "6633 6e Ave Montreal, Quebec H1Y 2X8")
+mountroyal = Court.create!(name: 'Mount Royal Country Club', address: "1620 Boul Graham Mount Royal, Quebec H3R 1G8")
+uniprix = Court.create!(name: 'Stade Uniprix', address: "285 rue Faillon Ouest Montreal, Quebec H2R 2W1")
+arthur = Court.create!(name: 'Parc Arthur-Therrien', address: "3750 Boulevard Gaétan Laberge Montreal, Quebec")
+robillard = Court.create!(name: 'Complèxe Claude Robillard', address: "1000 Ave Emile Journault Montreal, Quebec H2M 2E7")
+
+
 
 puts 'Creating users...'
 
