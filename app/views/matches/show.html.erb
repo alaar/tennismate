@@ -7,7 +7,7 @@
         </div>
         <h3><%= @match.requester.first_name %> vs. <%= @match.approver.first_name %></h3>
         <h3><%= @match.status %></h3>
-        <h3><strong>Location:</strong> <%= @match.court.address%></h3>
+        <h3><strong>Location:</strong> <%= link_to @match.court.address, court_path(@match.court) %></h3>
 
 
         <% if @match.approver == current_user && @match.status == "pending"%>
