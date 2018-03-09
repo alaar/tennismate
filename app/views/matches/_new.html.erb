@@ -1,5 +1,5 @@
 <%= simple_form_for [@user, @match] do |f| %>
-  <%= f.select :court, @user.shared_courts(current_user).map { |court| [court.name, court.id] } %>
+  <%= f.select :court, @user.shared_courts(current_user).map { |court| [court.name, court.id] }, {}, class: "dropdown" %>
   <%# f.select :availablility, @user.shared_availabilities(current_user).all.map { |availablility| ["#{availablility.day} #{availablility.day}", availablility.id] } %>
-  <%= f.submit "Send a request for a match", class: "btn btn-success center-btn"%>
+  <%= f.submit "Request a match", class: "btn btn-success center-btn request-match-button"%>
 <% end %>
