@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
 
-  before_action :set_match, only: [:show, :update]
+  before_action :set_match, only: [:show, :update, :edit]
 
   def show
     authorize @match
@@ -17,12 +17,18 @@ class MatchesController < ApplicationController
     authorize @match
     if @match.save!
       redirect_to match_path(@match)
-    else
-      render user_path(@user)
     end
   end
 
   def update
+    if params[:commit] == "approve"
+      @match.status = "accepted"
+    elsif params[:commit] == "decline"
+      @match.status = "rejected"
+    end
+    authorize @match
+    @match.save!
+    redirect_to match_path(@match)
   end
 
   private
