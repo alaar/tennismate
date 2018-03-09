@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user.edit(user_params)
     authorize @user
   end
 

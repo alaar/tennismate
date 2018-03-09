@@ -1,2 +1,21 @@
-<h1>Courts#index</h1>
-<p>Find me in app/views/courts/index.html.erb</p>
+
+  <div class="row map-row">
+    <div class="col-xs-12">
+      <div id="map" style="width: 100%; height: 50vh;" data-markers="<%= @markers.to_json %>">
+      </div>
+    </div>
+  </div>
+
+  <div class="courts_list">
+    <div class="row">
+      <% @courts.each do |court| %>
+        <div class="col-xs-4 user_each">
+          <h6><%= court.name %></h6>
+          <p>Address: <strong><%= court.address %></strong></p>
+        </div>
+      <% end %>
+      <div class="col-xs-4 user_each">
+        <div style="width: 90px; height: 90px;"></div>
+      </div>
+    </div>
+  </div>
