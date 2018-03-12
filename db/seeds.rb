@@ -42,4 +42,13 @@ gina = User.create!(age: 25, radius: 25, first_name: "Gina", last_name: "Ko", em
 
 puts 'Skipping matches for now...'
 
+puts 'creating availabilities'
+User.all.each do |user|
+  ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day|
+    ["Morning", "Afternoon", "Evening"].each do |time|
+      Availability.create!(user: user, day: day, time: time)
+    end
+  end
+end
+
 puts 'All done!'
