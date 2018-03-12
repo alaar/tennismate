@@ -1,4 +1,20 @@
 class User < ApplicationRecord
+  include PgSearch
+  pg_search_scope :search_by_attributes,
+    against: [ :last_name, :first_name, :skill_level, :gender],
+    using: {
+      tsearch: { prefix: true }
+    }
+  pg_search_scope :global_search,
+    against: [ :last_name, :first_name, :skill_level, :gender ],
+    associated_against: {
+      availability: [ :day, :time ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+
+    belongs_to :availability
 
   has_many :availabilities
 
