@@ -8,14 +8,14 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row sign-in-form">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <% resource_name = User.new %>
       <%= simple_form_for(@resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs text-center form-s">
           <%= f.text_field :email, class: 'ip-b', placeholder: 'Email address' %>
           <%= f.password_field :password, required: false, class: 'ip-b', placeholder: 'Password' %>
-          <%= f.submit "Sign in", class: 'btn btn-success button' %>
+          <%= f.submit "Sign in", class: 'btn btn-success button sign-in-button' %>
         </div>
       </div>
     </div>

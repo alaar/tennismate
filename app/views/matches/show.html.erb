@@ -7,17 +7,24 @@
         </div>
         <div class="match-show-content">
           <h3><%= @match.approver.first_name %> vs. <%= @match.requester.first_name %></h3>
-          <h3><%= @match.status %></h3>
-          <h3><strong>Location:</strong> <%= link_to @match.court.address, court_path(@match.court) %></h3>
+          <h5><strong>Status: <%= @match.status.capitalize %></strong></h5>
+          <div>
+            <h5><strong>Location: </strong></h5>
+            <div class="location-align">
+              <h5><%= link_to @match.court.address, court_path(@match.court) %></h5>
+            </div>
+          </div>
           <% marker = { lat: @match.court.latitude, lng: @match.court.longitude } %>
           <div class= "map-box" id="map" style="width: 100%; height: 25vh;" data-markers="[<%= marker.to_json %>]"></div>
 
-          <% if @match.approver == current_user && @match.status == "pending"%>
-            <%= simple_form_for @match do |f| %>
-              <%= f.submit "approve", class: "btn btn-success btn-lg" %>
-              <%= f.submit "decline", class: "btn btn-danger btn-lg" %>
+          <div class="match_btn">
+            <% if @match.approver == current_user && @match.status == "pending"%>
+              <%= simple_form_for @match do |f| %>
+                <%= f.submit "approve", class: "btn btn-success btn-lg" %>
+                <%= f.submit "decline", class: "btn btn-danger btn-lg" %>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
         <div class="a-link">
           <%= link_to "Back to my matches", matches_path%>
