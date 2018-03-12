@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "profile", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Profile", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Matches", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
 
@@ -42,7 +42,9 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% if current_page?(root_path) %>
+        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
     <% end %>
   </div>
 
