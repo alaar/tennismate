@@ -13,6 +13,7 @@ class User < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
   # delete belongs_to :availability
   has_many :availabilities
 
