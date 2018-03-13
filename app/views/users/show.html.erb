@@ -10,8 +10,17 @@
           <h6>Gender: <%= @user.gender %></h6>
           <h6>Age: <%= @user.age %></h6>
           <h6>Skill level: <%= @user.skill_level %></h6>
+          <h6>Availabilities</h6>
+          <% @user.availabilities.each do |availability| %>
+            <% if availability.available %>
+              <span id="my_availabilities"> <%= "#{availability.day[0,3]} #{availability.time}" %> </span>
+            <% end %>
+          <% end %>
         </div>
         <% if @user == current_user %>
+          <div class="btn btn-warning edit-profile col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <%= link_to "Edit your availabilities", availabilities_path %>
+          </div>
           <div class="btn btn-warning edit-profile col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <%= link_to "Edit your profile", edit_user_path %>
           </div>
@@ -27,5 +36,6 @@
       </div>
     </div>
   </div>
+  <%= link_to "back", users_path, class: "btn btn-primary" %>
 </div>
 

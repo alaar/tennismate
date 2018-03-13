@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :matches, only: [:show, :update, :index]
 
   resources :courts, only: [:show, :index]
+  resources :availabilities, only: [:index]
+
+  patch "/availabilities", to: "availabilities#update", as: :update_availabilities
 
 
   authenticated :user do
