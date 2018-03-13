@@ -1,0 +1,29 @@
+<div class="availabilities-wrapper">
+  <div class="availabilities-container">
+    <div class="availability-choices">
+      <%= form_tag(update_availabilities_path, method: "patch") do %>
+        <div class="form-group">
+          <ul>
+            <% current_user.availabilities.order(:created_at).each do |a| %>
+              <li class="availability-choice <%= "availablity-active" if a.available %>">
+                <input class="hidden" type="checkbox" value="<%= a.id %>" name="user[availability_ids][]">
+                <time class="icon">
+                  <span class="day"><%= a.day[0, 3] %></span>
+                  <span class="timing"><%= a.time %></span>
+                  <span class="check" style="display: none;">
+                    <i class="fa fa-check"></i>
+                  </span>
+                </time>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="form-actions text-center">
+          <%= submit_tag "Save changes", class: "btn btn-green" %>
+          <%= link_to "Cancel", user_path(current_user), class: "btn btn-blue"%>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
