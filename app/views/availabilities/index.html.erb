@@ -1,29 +1,46 @@
-<div class="availabilities-wrapper">
-  <div class="availabilities-container">
-    <div class="availability-choices">
-      <%= form_tag(update_availabilities_path, method: "patch") do %>
-        <div class="form-group">
-          <ul>
-            <% current_user.availabilities.order(:created_at).each do |a| %>
-              <li class="availability-choice <%= "availablity-active" if a.available %>">
-                <input class="hidden" type="checkbox" value="<%= a.id %>" name="user[availability_ids][]">
-                <time class="icon">
-                  <span class="day"><%= a.day[0, 3] %></span>
-                  <span class="timing"><%= a.time %></span>
-                  <span class="check" style="display: none;">
-                    <i class="fa fa-check"></i>
-                  </span>
-                </time>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="form-actions text-center">
-          <%= submit_tag "Save changes", class: "btn btn-green" %>
-          <%= link_to "Cancel", user_path(current_user), class: "btn btn-blue"%>
-        </div>
+<%= form_tag(update_availabilities_path, method: "patch") do %>
+  <div class="availabilities-header">
+    <div class="availabilities-corner">
 
-      <% end %>
+    </div>
+    <div class="time-headers">
+      <div class="time-header">Morning</div>
+      <div class="time-header">Afternoon</div>
+      <div class="time-header">Evening </div>
     </div>
   </div>
-</div>
+  <div class="availabilities-wrapper">
+     <div class="row-headers">
+      <div class="day-header">Monday</div>
+      <div class="day-header">Tuesday</div>
+      <div class="day-header">Wednesday</div>
+      <div class="day-header">Thursday</div>
+      <div class="day-header">Friday</div>
+      <div class="day-header">Saturday</div>
+      <div class="day-header">Sunday</div>
+    </div>
+
+    <div class="container availabilities-container">
+      <div class="row availabilities-row">
+        <% current_user.availabilities.order(:created_at).each do |a| %>
+          <div class="availability-col col-xs-4">
+            <div class="availability-choice <%= "availablity-active" if a.available %>">
+              <input class="hidden" type="checkbox" value="<%= a.id %>" name="user[availability_ids][]">
+              <i class="md fa fa-check md" style="display: <%= a.available ? "initial" : "none" %>"></i>
+              <i class="md fa fa-times" style="display: <%= a.available ? "none" : "initial" %>"></i>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="form-actions text-center" >
+    <%= submit_tag "Save changes", class: "btn basic-button btn-green" %>
+    <%= link_to "Cancel", user_path(current_user), class: "btn basic-button btn-grey"%>
+  </div>
+<% end %>
+
+
+
+
+
