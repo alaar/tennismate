@@ -108,7 +108,6 @@ private
       ORDER BY
         distance ASC
     "
-
     results = ActiveRecord::Base.connection.execute(sql)
     user_ids = results.map {|result| result['user_id'] }
     User.where(id: user_ids)
