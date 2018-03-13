@@ -1,5 +1,5 @@
 .wrapper {
-  color: black;
+  color: rgb(5, 5, 5);
 }
 
 .user-info {
@@ -56,3 +56,12 @@ select {
   text-align-last: center;
 }
 
+#my_availabilities{
+  background: #0BE286;
+  opacity: 0.5;
+  font-size: 16px;
+  color: rgb(5, 5, 5);
+  padding: 5px;
+  border-radius: 3px;
+  margin: 2px;
+}
