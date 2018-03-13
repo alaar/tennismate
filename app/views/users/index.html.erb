@@ -28,7 +28,9 @@
 
         <div class="row">
           <div class="col-xs-6 col-xs-offset-3 view_profile">
-            <h5>View Profile</h5>
+            <%= link_to user_path(user[:id]) do %>
+              <h5>View Profile</h5>
+            <% end %>
           </div>
         </div>
 
