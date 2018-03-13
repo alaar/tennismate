@@ -4,4 +4,7 @@ class Match < ApplicationRecord
 
   belongs_to :court
   belongs_to :availability, optional: true
+
+  has_many :reviews
 end
+
