@@ -1,5 +1,6 @@
 
-  class UsersController < ApplicationController
+class UsersController < ApplicationController
+
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_user, only: [:show, :edit, :update]
 
@@ -38,7 +39,6 @@
 
     markers
   end
-
 
   def update
     if params[:user]
