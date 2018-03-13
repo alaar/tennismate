@@ -18,8 +18,28 @@
 .match-show-content{
   text-align: center;
   background-color: rgba(230, 230, 230, 0.7);
+  padding:2px 0;
+  h3 {
+    margin-top: 2px;
+  }
 }
 
 .a-link{
   margin-left: 80px;
+  margin-top: 10px;
 }
+
+.location-align {
+  text-align: left;
+  margin: 0 30px;
+}
+
+.match_btn {
+  margin: 10px 0;
+  .btn {
+    width:130px;
+    margin:5px;
+  }
+}
+
+// modified by gina on 20180312
