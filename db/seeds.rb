@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts 'Cleaning database...'
+Availability.destroy_all
 Match.destroy_all
 Court.destroy_all
 User.destroy_all
@@ -46,7 +47,7 @@ puts 'creating availabilities'
 User.all.each do |user|
   ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day|
     ["Morning", "Afternoon", "Evening"].each do |time|
-      Availability.create!(user: user, day: day, time: time)
+      Availability.create!(user: user, day: day, time: time, available: rand > 0.5)
     end
   end
 end

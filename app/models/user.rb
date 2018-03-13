@@ -24,6 +24,25 @@ class User < ApplicationRecord
     end
   end
 
+  def shared_availabilities(user)
+    opponent_availabilities = user.availabilities
+
+    availabilities.select do |availability|
+      opponent_availabilities.any? do |opponent_availability|
+        opponent_availability.available &&
+        availability.available &&
+        opponent_availability.time == availability.time &&
+        opponent_availability.day == availability.day
+      end
+    end.pluck(:day, :time).map do |pair|
+      pair.join(" ")
+    end
+  end
+
+  def can_play_with?(user)
+    shared_courts(user).any? && shared_availabilities(user).any?
+  end
+
   def approver_matches
     Match.where(approver: self)
   end
