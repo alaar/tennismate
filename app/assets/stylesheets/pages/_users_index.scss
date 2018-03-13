@@ -8,13 +8,13 @@
   color: #627D72;
   background-color: white;
   border-radius: 5%;
-  padding: 20px !important;
+  padding: 13px 20px !important;
 }
 .avatar-user {
   display:flex;
-  margin:15px auto 0 auto;
-  width: 170px;
-  height: 170px;
+  margin:0 auto;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
@@ -40,7 +40,7 @@
 .icon-detail_1{
   // line-height: 1.5;
   padding-top: 8px;
-  background-color: yellow;
+  background-color: rgba(0, 151, 255, 0.5);
   width:100px;
   height: 60px;
   border-radius: 20%;
@@ -49,7 +49,7 @@
 .icon-detail_2{
   margin: 0 12px;
   padding-top: 8px;
-  background-color: SkyBlue;
+  background-color: rgba(142, 164, 197, 0.5);
   width:100px;
   height: 60px;
   border-radius: 20%;
@@ -57,14 +57,14 @@
 
 .icon-detail_3{
   padding-top: 8px;
-  background-color: rgb(232, 176, 88);
+  background-color:  rgba(15, 222, 123, 0.6);
   width:100px;
   height: 60px;
   border-radius: 20%;
 }
 
 .view_profile {
-  margin-top: 10px;
+  margin-top: 5px;
   display:flex;
   justify-content: space-around;
   border: 2px solid gray;
@@ -75,7 +75,7 @@
     color: #627D72;
   }
   h4 {
-    margin: 6px;
+    margin: 3px;
     font-weight:700;
   }
 }
