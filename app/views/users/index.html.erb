@@ -9,6 +9,13 @@
       </div>
     </div>
   </div>
+  <br>
+   <div class="input-group">
+    <%= form_tag users_path, method: :get do %>
+    <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a TennisMate" %>
+  <% end %>
+  </div>
+
   <div class="users_list">
     <div class="row">
       <% @users.each do |user| %>
@@ -27,4 +34,6 @@
       </div>
     </div>
   </div>
+
+
 </div>
