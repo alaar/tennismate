@@ -1,28 +1,114 @@
-.users_list {
-  display: flex;
-  color: black;
-  text-align: center;
-  margin-top: 15px;
-}
+.outline-user {
+  padding:10px;
 
-.user_each {
-  margin-bottom: 15px;
+}
+.container-user {
+  width:95%;
+  height: 55vh;
+  color: #627D72;
+  background-color: white;
+  border-radius: 5%;
+  padding: 20px !important;
+}
+.avatar-user {
   display:flex;
-  flex-direction: column;
-  align-items:center;
-  h6 {
-    margin-bottom: 0;
-    font-weight: bold;
+  margin:15px auto 0 auto;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 1px 2px 5px white;
+
+}
+
+
+.user_name h4 {
+  font-weight:bold;
+  text-align:center;
+}
+
+.user_info {
+  display:flex;
+  justify-content: space-around;
+  text-align:center;
+  p {
+    font-size: 16px;
   }
 }
 
-.user-photo {
-  margin-bottom:0;
+.icon-detail_1{
+  // line-height: 1.5;
+  padding-top: 8px;
+  background-color: yellow;
+  width:100px;
+  height: 60px;
+  border-radius: 20%;
 }
 
-.header-users-index {
-  height:290px;
+.icon-detail_2{
+  margin: 0 12px;
+  padding-top: 8px;
+  background-color: SkyBlue;
+  width:100px;
+  height: 60px;
+  border-radius: 20%;
+}
+
+.icon-detail_3{
+  padding-top: 8px;
+  background-color: rgb(232, 176, 88);
+  width:100px;
+  height: 60px;
+  border-radius: 20%;
+}
+
+.view_profile {
+  margin-top: 10px;
+  display:flex;
+  justify-content: space-around;
+  border: 2px solid gray;
+  border-radius:30px;
+  box-shadow: 1px 2px 3px;
+  a {
+    text-decoration: none;
+    color: #627D72;
+  }
   h4 {
-    margin: 0;
+    margin: 6px;
+    font-weight:700;
   }
 }
+
+// original code starts
+// .users_list {
+//   display: flex;
+//   color: black;
+//   text-align: center;
+//   margin-top: 15px;
+// }
+
+// .user_each {
+//   margin-bottom: 15px;
+//   display:flex;
+//   flex-direction: column;
+//   align-items:center;
+//   h6 {
+//     margin-bottom: 0;
+//     font-weight: bold;
+//   }
+// }
+
+// .user-photo {
+//   margin-bottom:0;
+// }
+
+// .header-users-index {
+//   height:290px;
+//   h4 {
+//     margin: 0;
+//   }
+// }
+
+
+// original code ends
