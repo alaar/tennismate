@@ -9,6 +9,9 @@
 puts 'Cleaning database...'
 Match.destroy_all
 Court.destroy_all
+Availability.destroy_all
+# because we used byebug to check, and availability is dependent to user,
+# so we have to delete availability before deleting users
 User.destroy_all
 
 puts 'Creating courts'
@@ -30,8 +33,13 @@ viateur = Court.create!(name: 'Tennis St-Viateur', address: '530 Avenue Querbes,
 
 puts 'Creating users...'
 
-asma = User.create!(age: 28, radius: 10, first_name: "Asma", last_name: "Laaribi", email: "asma@email.com", password: "secret", skill_level: 4, address: "5333 Avenue Casgrain, Montreal, QC H2T 1X3", photo: Rails.root.join("app/assets/images/Asma.png").open, admin: true)
-gina = User.create!(age: 25, radius: 25, first_name: "Gina", last_name: "Ko", email: "gina@email.com", password: "secret", skill_level: 3, address: "994 Rue Rachel E, Montreal, QC H2J 2J3", photo: Rails.root.join("app/assets/images/Gina.png").open)
+users = []
+users << User.new(age: 28, radius: 10, first_name: "Asma", last_name: "Laaribi", email: "asma@email.com", password: "secret", skill_level: 4, address: "5333 Avenue Casgrain, Montreal, QC H2T 1X3", photo: Rails.root.join("app/assets/images/Asma.png").open, admin: true)
+users << User.new(age: 25, radius: 25, first_name: "Gina", last_name: "Ko", email: "gina@email.com", password: "secret", skill_level: 3, address: "994 Rue Rachel E, Montreal, QC H2J 2J3", photo: Rails.root.join("app/assets/images/Gina.png").open)
+# we use User.new instead of create function, cause we haven't had availability yet
+# without availability, the user validation would fail. so we use User.new and create availability
+# and then save all the information when the availability is created
+
 # paul = User.create!(age: 30, radius: 1, first_name: "Paul", last_name: "Szkwarek", email: "paul@email.com", password: "secret", skill_level: 2, address: "3421 Park Ave, Montreal, QC H2X 2H6", photo: Rails.root.join("app/assets/images/Paul.png").open)
 # derek = User.create!(age: 23, radius: 5, first_name: "Derek", last_name: "Nugroho", email: "derek@email.com", password: "secret", skill_level: 1, address: "1297 Foret Rd, Outremont, QC H2V 2P9", photo: Rails.root.join("app/assets/images/Derek.png").open)
 # pete = User.create!(age: 47, radius:20, first_name: "Pete", last_name: "Sampra", email: "pete@email.com", password: "secret", skill_level: 14, address: "125 Ontario Street East, Montreal, QC H2X 1G9", photo: Rails.root.join("app/assets/images/pete.jpg").open)
@@ -43,12 +51,13 @@ gina = User.create!(age: 25, radius: 25, first_name: "Gina", last_name: "Ko", em
 puts 'Skipping matches for now...'
 
 puts 'creating availabilities'
-User.all.each do |user|
-  ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day|
-    ["Morning", "Afternoon", "Evening"].each do |time|
-      Availability.create!(user: user, day: day, time: time)
-    end
+users.each do |user|
+  3.times do
+    day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].sample
+    time = ["Morning", "Afternoon", "Evening"].sample
+    Availability.create!(user: user, day: day, time: time)
   end
+  user.save!
 end
 
 puts 'All done!'

@@ -13,9 +13,7 @@ class User < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-
-    belongs_to :availability
-
+  # delete belongs_to :availability
   has_many :availabilities
 
   # Include default devise modules. Others available are:
