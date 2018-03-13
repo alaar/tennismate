@@ -1,5 +1,6 @@
 
 class UsersController < ApplicationController
+
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_user, only: [:show, :edit, :update]
 
@@ -14,23 +15,25 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def update
-    @user.edit(user_params)
-    authorize @user
-  end
+  # def update
+  #   @user.edit(user_params)
+  #   authorize @user
+  # end
 
   def index
-    @users = if params[:query].present?
+    query = params[:query]
+    @users = if query.present?
       sql_query = " \
         users.last_name ILIKE :query \
         OR users.first_name ILIKE :query \
         OR users.gender ILIKE :query \
+        OR users.skill_level = :skill_level \
         OR availabilities.day ILIKE :query \
         OR availabilities.time ILIKE :query \
       "
       User
         .joins(:availabilities)
-        .where(sql_query, query: "%#{params[:query]}%")
+        .where(sql_query, query: "%#{query}%", skill_level: query.to_i)
         .distinct
     else
       courts_and_players
@@ -38,9 +41,6 @@ class UsersController < ApplicationController
 
     markers
   end
-
-
-
 
   def update
     if params[:user]
@@ -86,6 +86,8 @@ private
   end
 
   def courts_and_players
+    return User.none if my_courts.empty?
+
     ids = my_courts.map(&:id).join(',')
 
     sql = "
@@ -109,6 +111,7 @@ private
       ORDER BY
         distance ASC
     "
+
     results = ActiveRecord::Base.connection.execute(sql)
     user_ids = results.map {|result| result['user_id'] }
     User.where(id: user_ids)
