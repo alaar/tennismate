@@ -51,19 +51,6 @@
         </div>
       </div>
     </div>
-
-    <div class="users_list">
-      <div class="row">
-        <% @users.each do |user| %>
-          <div class="col-xs-4 user_each">
-            <div class="thumbnail user-photo" style="width: 90px; height: 90px;" >
-              <%= link_to user_path(user[:id]) do %>
-                <%= image_tag user.photo %>
-              <% end %>
-            </div>
-            <h6><%= user.first_name %></h6>
-            <p>Skill level: <strong><%= user.skill_level %></strong></p>
-
   </div>
   <div>
   <%= form_tag users_path, method: :get do %>
