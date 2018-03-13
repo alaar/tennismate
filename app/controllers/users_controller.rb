@@ -13,10 +13,10 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def update
-    @user.edit(user_params)
-    authorize @user
-  end
+  # def update
+  #   @user.edit(user_params)
+  #   authorize @user
+  # end
 
   def index
     # @users = User.all
@@ -32,19 +32,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    if params[:user]
-
-      @user.availabilities.each do |availability|
-        if params[:user][:availability_ids].include? availability.id.to_s
-          availability.available = !availability.available
-          availability.save!
-        end
-      end
-
-      @user.update_attributes!(user_params)
-      redirect_to user_path(@user)
-
-    end
+    @user.update_attributes!(user_params)
+    redirect_to user_path(@user)
   end
 
 private
