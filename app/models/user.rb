@@ -14,7 +14,6 @@ class User < ApplicationRecord
       tsearch: { prefix: true }
     }
 
-  # delete belongs_to :availability
   has_many :availabilities
 
   # Include default devise modules. Others available are:
