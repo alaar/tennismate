@@ -27,8 +27,13 @@ class User < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  after_create :fill_availabilities
 
   mount_uploader :photo, PhotoUploader
+
+  def fill_availabilities
+    Availability.fill_for_user(self)
+  end
 
   def shared_courts(user)
     my_courts = Court.near(address, radius)
