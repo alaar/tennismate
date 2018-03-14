@@ -1,21 +1,28 @@
 .match-show-profile-picture-container{
   display: flex;
-  width: 180px;
+  width: 220px;
   margin: 0 auto;
   margin-top: 20px;
   #show-image-1{
-    position: relative;
-    left: 10px;
+    // position: relative;
+    left: 8px;
     border-radius: 50%;
   }
   #show-image-2{
-    position: relative;
-    right: 10px;
+    // position: relative;
+    right: 8px;
     border-radius: 50%;
   }
 }
 
+.location-title-in-match {
+  h5 {
+    margin-bottom: 0 !important;
+  }
+}
+
 .match-show-content{
+  // position: relative;
   text-align: center;
   background-color: rgba(230, 230, 230, 0.7);
   padding:2px 0;
@@ -32,8 +39,23 @@
 .location-align {
   text-align: left;
   margin: 0 30px;
+  p {
+    margin: 0 !important;
+  }
+  a {
+    width:200px;
+    font-size: 16px;
+  }
 }
 
+.map-box-setting {
+  display:flex;
+  justify-content:center;
+  margin-bottom: 15px;
+  #map {
+    margin-top: 5px;
+  }
+}
 .match_btn {
   margin: 10px 0;
   .btn {

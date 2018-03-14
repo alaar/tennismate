@@ -1,29 +1,35 @@
-<h3>My Matches</h3>
+<div class="container container-matches-index">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <h3>My Matches</h3>
+    </div>
 
-
-<% if current_user.requester_matches.size > 0  %>
-  <h4>Requests made by me</h4>
-  <ul>
-    <% current_user.requester_matches.each do |match| %>
-    <li>
-      <%= link_to "match with #{match.approver.first_name} at: ", match_path(match)%>
-      <%= link_to match.court.address, court_path(match.court)%>
-    </li>
-    <br>
-    <% end %>
-  </ul>
-<% end %>
-<br>
-<% if current_user.approver_matches.size > 0 %>
-  <h4>Requests made by other players</h4>
-  <ul>
-    <% current_user.approver_matches.each do |match| %>
-      <li>
-        <%= link_to "match with #{match.requester.first_name} at: ", match_path(match)%>
-        <%= link_to match.court.address, court_path(match.court)%>
-      </li>
+    <div class="col-xs-12">
+      <% if current_user.requester_matches.size > 0  %>
+        <h4>Requests made by me</h4>
+        <ul>
+          <% current_user.requester_matches.each do |match| %>
+          <li>
+            <h5><%= link_to "Match with #{match.approver.first_name} at: ", match_path(match)%></h6>
+            <%= link_to match.court.address, court_path(match.court)%>
+          </li>
+          <br>
+          <% end %>
+        </ul>
+      <% end %>
       <br>
-    <% end %>
-  </ul>
-<% end %>
-
+      <% if current_user.approver_matches.size > 0 %>
+        <h4>Requests made by other players</h4>
+        <ul>
+          <% current_user.approver_matches.each do |match| %>
+            <li>
+              <h5><%= link_to "Match with #{match.requester.first_name} at: ", match_path(match)%></h5>
+              <%= link_to match.court.address, court_path(match.court)%>
+            </li>
+            <br>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
