@@ -4,3 +4,33 @@
     display: none;
   }
 }
+
+.user_gender {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: inline;
+  }
+
+
+  .radio {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.user_photo {
+  text-align: center;
+}
+
+#user_photo {
+  margin-left: 45px;
+}
+
+#show-image {
+  margin: 5px auto;
+}
