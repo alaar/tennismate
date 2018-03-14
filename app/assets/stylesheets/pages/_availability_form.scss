@@ -6,205 +6,35 @@
   font-family:'Montserrat',sans-serif;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-ul li {
-  display: inline-block;
-  width: 95px;
-  margin: 5px;
-}
-
-time.icon {
-  display:block;
-  position:relative;
-  width:100%;
-  height:100%;
-  background-color: none;
-  margin:0;
-  border-radius:4px;
-  -webkit-border-radius:4px;
-  -moz-border-radius:4px;
-  overflow:hidden;
-  // background:url(http://www.transparenttextures.com/patterns/swirl.png), linear-gradient(125deg, #D5D6AA 0%, #9DBBAE 50%, #769FB6 100%);
-  //background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
-  }
-
-time.icon * {
-  display:block;
-  width:100%;
-  font-weight:700;
-  font-style:normal;
-  text-align:center;
-}
-
-time.icon .day {
-  text-transform:uppercase;
-  font-size:18px;
-  color: white;
-  background-color:rgba(0,0,0,.1);
-  padding:7px 0;
-  border-bottom:1px solid rgba(0,0,0,.2);
-}
-
-time.icon .timing {
-  font-size:12px;
-  color:#fff;
-  padding:0;
-  padding-top: 5px 0;
-}
-
-time.icon .check {
-  font-size:12px;
-  line-height:16px;
-  color:#fff;
-  padding:5px 0;
-  padding-bottom:10px;
-}
-
-.icon.Monday {
-  background-color: #D2DCF2;
-  color:black !important;
-  opacity: 0.9;
-    &:hover{
-    background-color: #99AECC;
-    opacity: 1;
-  }
-//     &:active{
-//     opacity: 1;
-//     background: rgb(12, 162, 97);
-//     color: white;
-//   }
-}
-
-.icon.Tuesday {
-  background-color:  #D2DCF2;
-  color:#fff!important;
-  opacity: 0.5;
-    &:hover{
-    background-color: #99AECC;
-    opacity: 1;
-  }
-  //   &:active{
-  //   opacity: 1;
-  //   background: rgb(12, 162, 97);
-  //   color: white;
-  //   border: 4px solid rgb(12, 162, 97);
-  //   box-shadow: none;
-  // }
-}
-
-.icon.Wednesday {
-  background-color: #D2DCF2;
-  color:#fff!important;
-  opacity: 0.5;
-    &:hover{
-    background-color: #99AECC;
-    opacity: 1;
-  }
-  //   &:active{
-  //   opacity: 1;
-  //   background: rgb(12, 162, 97);
-  //   color: white;
-  //   border: 4px solid rgb(12, 162, 97);
-  //   box-shadow: none;
-  // }
-}
-
-.icon.Thursday {
-  background-color: #D2DCF2;
-  color:#fff!important;
-  opacity: 0.5;
-    &:hover{
-    background-color: #99AECC;
-    opacity: 1;
-  }
-  //   &:active{
-  //   opacity: 1;
-  //   background: rgb(12, 162, 97);
-  //   color: white;
-  //   border: 4px solid rgb(12, 162, 97);
-  //   box-shadow: none;
-  // }
-}
-
-.icon.Friday {
-  background-color: #D2DCF2;
-  color:#fff!important;
-  opacity: 0.5;
-    &:hover{
-    background-color: #99AECC;
-    opacity: 1;
-  }
-  //   &:active{
-  //   opacity: 1;
-  //   background: rgb(12, 162, 97);
-  //   color: white;
-  //   border: 4px solid rgb(12, 162, 97);
-  //   box-shadow: none;
-  // }
-}
-
-.icon.Saturday {
-  background-color: #D2DCF2;
-  color:#fff!important;
-  opacity: 0.5;
-  &:hover{
-    background-color: #99AECC;
-    opacity: 1;
-  }
-  //   &:active{
-  //   opacity: 1;
-  //   background: rgb(12, 162, 97);
-  //   color: white;
-  //   border: 4px solid rgb(12, 162, 97);
-  //   box-shadow: none;
-  // }
-}
-
-.icon.Sunday {
-  background-color: #D2DCF2;
-  // background-color: #E6F97A;
-  color:#fff!important;
-  opacity: 0.5;
-
-  &:hover{
-    background-color: #99AECC;
-    //background-color: #F8A422;
-    opacity: 1;
-  }
-  // &:active{
-  // //   opacity: 1;
-  // background: #0BE286;
-  // color: white;
-  // //   border: 4px solid rgb(12, 162, 97);
-  // //   box-shadow: none;
-  //  }
-}
-
 .availablity-active {
-  background-color: #99AECC !important;
+  opacity: 1 !important;
+  background-color: #0BE286 !important;
   //background-color: #F8A422 !important;
   color: white;
-  border: 4px solid #99AECC  !important;
+  border: 4px solid #0BE286  !important;
   // border: 4px solid #F8A422 !important;
   box-shadow: none;
-  border-radius: 3px;
+  // border-radius: 3px;
+}
+
+.availability-col {
+  padding: 0 !important;
 }
 
 .availability-choice {
-  background-color:  #D2DCF2;
+  width: 20vw;
+  height: 20vw;
+  text-align: center;
+  vertical-align: center;
+  background-color: rgba(25, 225, 133, 0.1);
   //background-color: #E6F97A;
-  border: 4px solid #D2DCF2;
+  //border: 4px solid #0BE286;
   //background-color: #E6F97A;
-  border-radius: 3px;
+  // border-radius: 3px;
   cursor: pointer;
 
   &:hover {
-    opacity: 0.7;
+    //opacity: 0.7;
   }
 }
 
@@ -216,45 +46,82 @@ time.icon .check {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.availabilities-container {
-  background-color: white;
+.row-headers{
+  width: 30vw;
+  margin-top: 0.5vh;
+  margin-left: 0;
+  font-size: 4vw;
+  font-weight: bold;
+
+}
+
+.day-header {
+  height: 20vw;
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 40px;
-  margin-top: 60px;
-  border-radius: 3px;
+
+}
+
+.availabilities-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 3vw;
+  font-weight: bold;
+}
+
+.availabilities-corner {
+  width: 30vw;
+}
+
+.availabilities-row {
+  margin: 0 !important;
+}
+
+.time-headers {
+  width: 60vw;
+  display: flex;
+}
+
+.time-header {
+  width: 20vw;
+}
+
+.availabilities-container {
+  width: 60vw;
+  margin-top: 7vh;
+  // margin-left: 35vw;
+  margin: 0 !important;
+  padding: 0 !important;
+  // background-color: white;
+  // display: flex;
+  // justify-content: center;
+  // padding: 40px;
+  // margin-top: 60px;
+  // border-radius: 3px;
 }
 
 .availabilities-wrapper {
   display: flex;
-  justify-content: center;
-}
-
-.btn-green{
-  background: #0BE286;
-  opacity: 0.7;
-  color: white;
-  text-decoration: semibold;
-
-  border-color: white;
-  &:hover{
-  background: #0BE286;
-  opacity: 1;
-  color: white;
-  border: #0BE286;
-  }
+  // justify-content: center;
 }
 
 
-.btn-blue{
-  background: #05A1FF ;
-  opacity: 0.7;
-  color: white !important;
-  border-color: white !important;
-  &:hover{
-  background: #05A1FF ;
-  opacity: 1;
-  color: white;
-  border: #05A1FF ;
-  }
+.fa-check{
+  font-size: 5vw;
+  position: absolute;
+  top: calc(50% - 2.5vw);
+  left: calc(50% - 2.5vw);
 }
+
+.fa-times{
+  font-size: 5vw;
+  position: absolute;
+  top: calc(50% - 2.5vw);
+  left: calc(50% - 2.5vw);
+  color: rgb(50, 50, 50);
+}
+

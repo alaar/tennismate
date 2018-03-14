@@ -1,9 +1,15 @@
-<%= simple_form_for [@user, @match] do |f| %>
-  <div class="dropdown-1">
-    <%= f.select :court, @user.shared_courts(current_user).map { |court| [court.name, court.id] }, {}, class: "dropdown" %>
-  </div>
-  <%# f.select :availablility, @user.shared_availabilities(current_user).all.map { |availablility| ["#{availablility.day} #{availablility.day}", availablility.id] } %>
-  <div>
-    <%= f.submit "Request a match", class: "btn btn-success center-btn request-match-button"%>
-  </div>
+<% if current_user.can_play_with?(@user) %>
+  <%= simple_form_for [@user, @match] do |f| %>
+    <div class="dropdown-1">
+      <%= f.select :court, @user.shared_courts(current_user).map { |court| [court.name, court.id] }, {}, class: "dropdown" %>
+    </div>
+    <div class="drop-down-2">
+      <%= f.select :availability, @user.shared_availabilities(current_user) %>
+    </div>
+    <div>
+      <%= f.submit "Request a match", class: "btn btn-success center-btn request-match-button"%>
+    </div>
+  <% end %>
+<% else %>
+  <h1>You can't</h1>
 <% end %>

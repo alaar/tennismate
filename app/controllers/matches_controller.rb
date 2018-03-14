@@ -19,6 +19,9 @@ class MatchesController < ApplicationController
     @user = User.find(params[:user_id])
     @match.approver = @user
     @match.court = Court.find(params[:match][:court])
+    @match.day = params[:match][:availability].split(" ")[0]
+    @match.time = params[:match][:availability].split(" ")[1]
+
     authorize @match
     if @match.save!
       redirect_to match_path(@match)

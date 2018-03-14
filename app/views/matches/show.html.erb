@@ -7,6 +7,7 @@
         </div>
         <div class="match-show-content">
           <h3><%= @match.approver.first_name %> vs. <%= @match.requester.first_name %></h3>
+          <h3><%= @match.day + " " + @match.time%></h3>
           <h5><strong>Status: <%= @match.status.capitalize %></strong></h5>
           <div class ="location-title-in-match">
             <h5><strong>Location: </strong></h5>

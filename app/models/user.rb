@@ -27,8 +27,13 @@ class User < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  after_create :fill_availabilities
 
   mount_uploader :photo, PhotoUploader
+
+  def fill_availabilities
+    Availability.fill_for_user(self)
+  end
 
   def shared_courts(user)
     my_courts = Court.near(address, radius)
@@ -36,6 +41,25 @@ class User < ApplicationRecord
     my_courts.select do |court|
       opponent_courts.include?(court)
     end
+  end
+
+  def shared_availabilities(user)
+    opponent_availabilities = user.availabilities
+
+    availabilities.select do |availability|
+      opponent_availabilities.any? do |opponent_availability|
+        opponent_availability.available &&
+        availability.available &&
+        opponent_availability.time == availability.time &&
+        opponent_availability.day == availability.day
+      end
+    end.pluck(:day, :time).map do |pair|
+      pair.join(" ")
+    end
+  end
+
+  def can_play_with?(user)
+    shared_courts(user).any? && shared_availabilities(user).any?
   end
 
   def approver_matches
