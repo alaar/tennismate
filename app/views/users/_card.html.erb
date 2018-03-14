@@ -1,9 +1,55 @@
 <div class="container-user">
+  <div class="card-banner">
+    <div class="user_each">
+      <%= link_to user_path(user[:id]) do %>
+        <div class="avatar-user" style="background-image: url('<%= user.photo %>');">
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="user-card-lower-index">
+    <div class="user_name">
+      <h4><%= "#{user.first_name}  #{user.last_name.upcase}" %></h4>
+    </div>
+    <div class="user-rating">
+      <%= image_tag "icons/star.png" %>
+      <%= image_tag "icons/star.png" %>
+      <%= image_tag "icons/star.png" %>
+      <%= image_tag "icons/star.png" %>
+      <%= image_tag "icons/star.png" %>
+    </div>
+
+    <div class="user_info">
+      <div class= "user_info-detail">
+        <h6>Age</h6>
+        <h5><%= user.age %></h5>
+      </div>
+       <div class= "user_info-detail border-left-right">
+        <h6>Matches</h6>
+        <h5><%= user.user_matches_number  %></h5>
+      </div>
+      <div class= "user_info-detail">
+        <h6>Level</h6>
+        <h5><%= user.skill_level %></h5>
+      </div>
+    </div>
+
+<!--     <div class="view_profile">
+      <%#=link_to user_path(user[:id]) do %>
+        <h5>View Profile</h5>
+      <%# end %>
+    </div> -->
+  </div>
+</div>
+
+
+<!-- before
+<div class="container-user">
   <div class="user_each">
-    <%= link_to user_path(user[:id]) do %>
+    <%#= link_to user_path(user[:id]) do %>
       <div class="avatar-user" style="background-image: url('<%= user.photo %>');">
       </div>
-    <% end %>
+    <%# end %>
   </div>
 
   <div class="user_name">
@@ -11,14 +57,17 @@
   </div>
 
   <div class="user_info">
-    <p class= "icon-detail_1"><strong>Skill<br><%= user.skill_level %></strong></p>
-    <p class= "icon-detail_2"><strong>Age<br><%= user.age %></strong></p>
-    <p class= "icon-detail_3"><strong>Gender<br><%= user.gender %></strong></p>
+    <p class= "icon-detail_1"><strong>Skill<br><%#= user.skill_level %></strong></p>
+    <p class= "icon-detail_2"><strong>Age<br><%#= user.age %></strong></p>
+    <p class= "icon-detail_3"><strong>Gender<br><%#= user.gender %></strong></p>
   </div>
 
   <div class="view_profile">
-    <%=link_to user_path(user[:id]) do %>
+    <%#=link_to user_path(user[:id]) do %>
       <h5>View Profile</h5>
-    <% end %>
+    <%# end %>
   </div>
 </div>
+
+
+-->

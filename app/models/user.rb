@@ -35,6 +35,12 @@ class User < ApplicationRecord
     Availability.fill_for_user(self)
   end
 
+  def user_matches_number
+    number = 0
+    number += requester_matches.size unless requester_matches.nil?
+    number += approver_matches.size unless approver_matches.nil?
+  end
+
   def shared_courts(user)
     my_courts = Court.near(address, radius)
     opponent_courts = Court.near(user.address, user.radius)
@@ -62,11 +68,14 @@ class User < ApplicationRecord
     shared_courts(user).any? && shared_availabilities(user).any?
   end
 
+  #return an arrays of matches where I am the approver
   def approver_matches
     Match.where(approver: self)
   end
 
+  #return an arrays of matches where I am the requester
   def requester_matches
     Match.where(requester: self)
   end
+
 end
