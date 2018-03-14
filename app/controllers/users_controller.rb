@@ -92,7 +92,8 @@ private
       FROM
         courts
       LEFT JOIN
-        users on (( 6371.0 * 2 * Asin(Sqrt(Power(Sin(( users.latitude - courts.latitude ) * Pi() / 180 / 2), 2) + Cos(users.latitude * Pi() / 180) * Cos(courts.latitude * Pi() / 180) * Power(Sin(( users.longitude - courts.longitude ) * Pi() / 180 / 2), 2))) )
+        users on
+        (( 6371.0 * 2 * Asin(Sqrt(Power(Sin(( users.latitude - courts.latitude ) * Pi() / 180 / 2), 2) + Cos(users.latitude * Pi() / 180) * Cos(courts.latitude * Pi() / 180) * Power(Sin(( users.longitude - courts.longitude ) * Pi() / 180 / 2), 2))) )
         BETWEEN
           0.0 AND users.radius )
       WHERE

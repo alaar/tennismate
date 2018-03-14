@@ -1,0 +1,24 @@
+<div class="container-user">
+  <div class="user_each">
+    <%= link_to user_path(user[:id]) do %>
+      <div class="avatar-user" style="background-image: url('<%= user.photo %>');">
+      </div>
+    <% end %>
+  </div>
+
+  <div class="user_name">
+    <h4><%= user.first_name %></h4>
+  </div>
+
+  <div class="user_info">
+    <p class= "icon-detail_1"><strong>Skill<br><%= user.skill_level %></strong></p>
+    <p class= "icon-detail_2"><strong>Age<br><%= user.age %></strong></p>
+    <p class= "icon-detail_3"><strong>Gender<br><%= user.gender %></strong></p>
+  </div>
+
+  <div class="view_profile">
+    <%=link_to user_path(user[:id]) do %>
+      <h5>View Profile</h5>
+    <% end %>
+  </div>
+</div>
