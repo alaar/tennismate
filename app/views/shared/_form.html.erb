@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="form-group">
+    <%= label_tag 'Name' %>
+    <%= form_tag users_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-group form-control m-5",
+        placeholder: "Search for a Name"
+      %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag 'Rating' %>
+    <%= form_tag users_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-group form-control m-5",
+        placeholder: "Search for a Rating"
+      %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag 'Search' %>
+    <%= form_tag users_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-group form-control m-5",
+        placeholder: "Search for Gender"
+      %>
+    <% end %>
+  </div>
+</div>
+
+

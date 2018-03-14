@@ -1,0 +1,35 @@
+
+ <% if user_signed_in? %>
+  <div class="footer-app text-center">
+
+    <div class="footer-item">
+    <%= link_to "/" do %>
+      <%= image_tag "racket.svg" %>
+      <p>Play</p>
+    <% end %>
+
+    </div>
+
+    <div>
+      <%= link_to "/availabilities" do %>
+        <%= image_tag "clock.svg" %>
+        <p>Schedule</p>
+      <% end %>
+    </div>
+
+    <div>
+      <%= link_to "/matches" do %>
+        <%= image_tag "tennis-ball.svg" %>
+        <p>Matches</p>
+      <% end %>
+    </div>
+
+    <div>
+      <%= link_to user_path(current_user) do %>
+        <%= image_tag "profile.svg" %>
+        <p>Profile</p>
+    <% end %>
+    </div>
+  </div>
+<% end %>
+

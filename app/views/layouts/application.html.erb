@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TennisMate -- Find your next hitting partner!</title>
 
     <%= csrf_meta_tags %>
@@ -17,7 +17,12 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+   <div id="container-app">
+    <div id="body"><%= yield %></div>
+     <% if user_signed_in? %>
+    <div id="footer"><%= render 'shared/footer' %></div>
+    <% end %>
+   </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag "map" %>
