@@ -1,6 +1,11 @@
 <div class="user-show-container">
   <div class="user-show-banner">
     <div class="avatar-user-show" style="background-image: url('<%= @user.photo %>');">
+    <% if @user == current_user %>
+      <%= link_to edit_user_path, class: "user-edit-icon" do %>
+        <i class="fa fa-pen-square" style="color: white;"></i>
+      <% end %>
+    <% end %>
     </div>
   </div>
   <div class="user-second-half">

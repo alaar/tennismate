@@ -22,8 +22,8 @@
 }
 
 .availability-choice {
-  width: 20vw;
-  height: 20vw;
+  width: 18vw;
+  height: 18vw;
   text-align: center;
   vertical-align: center;
   background-color: rgba(25, 225, 133, 0.1);
@@ -56,25 +56,29 @@
 }
 
 .day-header {
-  height: 20vw;
+  height: 18vw;
   display: flex;
   align-items: center;
   justify-content: center;
 
+}
+
+.availabilities-buttons {
+  margin-top: 20px;
 }
 
 .availabilities-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 3vw;
   font-weight: bold;
 }
 
 .availabilities-corner {
-  width: 30vw;
+  width: 22vw;
 }
 
 .availabilities-row {
@@ -82,16 +86,16 @@
 }
 
 .time-headers {
-  width: 60vw;
+  width: 54vw;
   display: flex;
 }
 
 .time-header {
-  width: 20vw;
+  width: 18vw;
 }
 
 .availabilities-container {
-  width: 60vw;
+  width: 54vw;
   margin-top: 7vh;
   // margin-left: 35vw;
   margin: 0 !important;
