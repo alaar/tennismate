@@ -1,39 +1,84 @@
+<div class="match-show-banner flex-std"><h1><%= @match.approver.first_name %> vs. <%= @match.requester.first_name %></h1></div>
+
+<div class="empty-banner" style = "height: 75px">
+</div>
 <div class="container-1">
-    <div class="col-xs-12">
-      <div class="match-show-info">
-        <div class="match-show-profile-picture-container">
-          <%= cl_image_tag(@match.approver.photo, height: 110, width: 110, crop: :fill, :id => "show-image-1") %>
-          <%= cl_image_tag(@match.requester.photo, height: 110, width: 110, crop: :fill, :id => "show-image-2") %>
-        </div>
-        <div class="match-show-content">
-          <h3><%= @match.approver.first_name %> vs. <%= @match.requester.first_name %></h3>
-          <h3><%= @match.day + " " + @match.time%></h3>
-          <h5><strong>Status: <%= @match.status.capitalize %></strong></h5>
-          <div class ="location-title-in-match">
-            <h5><strong>Location: </strong></h5>
-            <div class="location-align">
-              <p><%= link_to @match.court.address, court_path(@match.court) %></p>
-            </div>
+  <div class="col-xs-12">
+    <div class="match-show-info">
+      <div class="match-show-profile-picture-container">
+        <%= cl_image_tag(@match.approver.photo, height: 135, width: 135, crop: :fill, :id => "show-image-1") %>
+        <%= cl_image_tag(@match.requester.photo, height: 135, width: 135, crop: :fill, :id => "show-image-2") %>
+      </div>
 
-          </div>
 
-          <div class="map-box-setting">
-            <% marker = { lat: @match.court.latitude, lng: @match.court.longitude } %>
-            <div class= "map-box" id="map" style="width: 90%; height: 25vh;" data-markers="[<%= marker.to_json %>]"></div>
-          </div>
+      <div class="match-show-content">
 
-          <div class="match_btn">
-            <% if @match.approver == current_user && @match.status == "pending"%>
-              <%= simple_form_for @match do |f| %>
-                <%= f.submit "approve", class: "btn btn-success btn-lg" %>
-                <%= f.submit "decline", class: "btn btn-danger btn-lg" %>
-              <% end %>
+        <div class="match_btn">
+          <% if @match.approver == current_user && @match.status == "pending"%>
+            <%= simple_form_for @match do |f| %>
+              <%= f.submit "Approve", class: "btn btn-success" %>
+              <%= f.submit "Decline", class: "btn btn-danger" %>
             <% end %>
-          </div>
+          <% else %>
+            <div  class="confirmed-match">
+              <p> This match is <%= @match.status %> </p>
+            </div>
+          <% end %>
         </div>
-        <div class="a-link">
-          <%= link_to "Back to my matches", matches_path%>
+        <div class="time-location">
+          <div class='flex-left '><i class="far fa-clock icon-clock"></i><p><%= @match.day %>  <%= @match.time %></p></div>
+          <div class='flex-left '><i class="fas fa-map-marker-alt icon-marker"></i> <p><%=  @match.court.name %></p></div>
         </div>
+
+
       </div>
     </div>
+      <div class="map-box-setting">
+        <% marker = { lat: @match.court.latitude, lng: @match.court.longitude } %>
+        <div class= "map-box" id="map" style="width: 100%; height: 35vh;" data-markers="[<%= marker.to_json %>]"></div>
+      </div>
+  </div>
 </div>
+</div>
+
+<% if false %>
+  <div class="container-1">
+      <div class="col-xs-12">
+        <div class="match-show-info">
+          <div class="match-show-profile-picture-container">
+            <%= cl_image_tag(@match.approver.photo, height: 110, width: 110, crop: :fill, :id => "show-image-1") %>
+            <%= cl_image_tag(@match.requester.photo, height: 110, width: 110, crop: :fill, :id => "show-image-2") %>
+          </div>
+          <div class="match-show-content">
+            <h3><%= @match.approver.first_name %> vs. <%= @match.requester.first_name %></h3>
+            <h3><%= @match.day + " " + @match.time%></h3>
+            <h5><strong>Status: <%= @match.status.capitalize %></strong></h5>
+            <div class ="location-title-in-match">
+              <h5><strong>Location: </strong></h5>
+              <div class="location-align">
+                <p><%= link_to @match.court.address, court_path(@match.court) %></p>
+              </div>
+
+            </div>
+
+            <div class="map-box-setting">
+              <% marker = { lat: @match.court.latitude, lng: @match.court.longitude } %>
+              <div class= "map-box" id="map" style="width: 90%; height: 25vh;" data-markers="[<%= marker.to_json %>]"></div>
+            </div>
+
+            <div class="match_btn">
+              <% if @match.approver == current_user && @match.status == "pending"%>
+                <%= simple_form_for @match do |f| %>
+                  <%= f.submit "approve", class: "btn btn-success btn-lg" %>
+                  <%= f.submit "decline", class: "btn btn-danger btn-lg" %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <div class="a-link">
+            <%= link_to "Back to my matches", matches_path%>
+          </div>
+        </div>
+      </div>
+  </div>
+<% end %>
