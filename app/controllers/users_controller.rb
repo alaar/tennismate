@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   def index
     query = params[:query]
+
     @users = if query.present?
       sql_query = " \
         users.last_name ILIKE :query \
@@ -41,6 +42,7 @@ class UsersController < ApplicationController
 
     markers
   end
+
 
   def update
     @user.update_attributes!(user_params)
@@ -128,4 +130,5 @@ private
       }
     end
   end
+
 end

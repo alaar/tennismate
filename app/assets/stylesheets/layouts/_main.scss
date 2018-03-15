@@ -9,10 +9,10 @@ body {
    position:relative;
 }
 
-// #body {
-//    padding:10px;
-//    padding-bottom:40px;   /* Height of the footer */
-// }
+#body {
+   padding:10px;
+   padding-bottom:60px;   /* Height of the footer */
+}
 
 #footer {
    position:fixed;
@@ -22,3 +22,4 @@ body {
    background:#6cf;
    z-index: 50;
 }
+

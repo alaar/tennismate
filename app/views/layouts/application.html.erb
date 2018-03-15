@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TennisMate -- Find your next hitting partner!</title>
-
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application'%>
@@ -19,6 +19,7 @@
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
  </head>
  <body>
+
     <%= render 'shared/flashes' %>
     <!-- <div id="container-app"> -->
       <div id="body">
