@@ -1,41 +1,104 @@
-<div class="container wrapper">
+<div class="user-show-container">
+  <div class="user-show-banner">
+    <div class="avatar-user-show" style="background-image: url('<%= @user.photo %>');">
+    </div>
+  </div>
+  <div class="user-second-half">
+    <div class="user_name">
+      <h4><%= "#{@user.first_name}  #{@user.last_name.upcase}" %></h4>
+    </div>
+    <div class="user-rating">
+      <%= image_tag "icons/star.png" %>
+      <%= image_tag "icons/star.png" %>
+      <%= image_tag "icons/star.png" %>
+      <%= image_tag "icons/star.png" %>
+      <%= image_tag "icons/star.png" %>
+    </div>
+    <div class="user_info">
+      <div class= "user_info-detail">
+        <h6>Age</h6>
+        <h5><%= @user.age %></h5>
+      </div>
+       <div class= "user_info-detail border-left-right">
+        <h6>Matches</h6>
+        <h5><%= @user.user_matches_number  %></h5>
+      </div>
+      <div class= "user_info-detail">
+        <h6>Level</h6>
+        <h5><%= @user.skill_level %></h5>
+      </div>
+    </div>
+    <% if @user == current_user %>
+      <div class="user_info">
+        <div class= "user_info-detail">
+          <h6>Availabilities</h6>
+          <h5><%= @user.availabilities.where(available: true).size %></h5>
+        </div>
+        <div class= "user_info-detail border-left-right">
+          <h6>Gender</h6>
+          <h5><%= @user.gender  %></h5>
+        </div>
+        <div class= "user_info-detail">
+          <h6>Radius</h6>
+          <h5><%= @user.radius%></h5>
+        </div>
+      </div>
+
+      <!-- <div class="btn btn-grey">
+          <%#= link_to "Edit your availabilities", availabilities_path %>
+      </div>
+      <div class="btn btn-grey edit-profile">
+          <%#= link_to "Edit your profile", edit_user_path %>
+      </div> -->
+    <% else %>
+      <div class="match-inputs">
+        <%= render "matches/new" %>
+      </div>
+    <% end %>
+</div>
+
+
+
+
+<!-- <div class="container wrapper">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="show-info">
         <div class="image-wrapper">
-          <%= cl_image_tag(@user.photo, height: 170, width: 170, crop: :fill, :id => "show-image") rescue nil %>
+          <%#= cl_image_tag(@user.photo, height: 170, width: 170, crop: :fill, :id => "show-image") rescue nil %>
         </div>
         <div class="user-info">
-          <h3><%= @user.first_name %></h4>
-          <h6>Gender: <%= @user.gender %></h6>
-          <h6>Age: <%= @user.age %></h6>
+          <h3><%#= @user.first_name %></h4>
+          <h6>Gender: <%#= @user.gender %></h6>
+          <h6>Age: <%#= @user.age %></h6>
           <h6>Skill level: <%= @user.skill_level %></h6>
           <h6>Availabilities</h6>
-          <% @user.availabilities.each do |availability| %>
-            <% if availability.available %>
-              <span id="my_availabilities"> <%= "#{availability.day[0,3]} #{availability.time}" %> </span>
-            <% end %>
-          <% end %>
+          <%# @user.availabilities.each do |availability| %>
+            <%# if availability.available %>
+              <span id="my_availabilities"> <%#= "#{availability.day[0,3]} #{availability.time}" %> </span>
+            <%# end %>
+          <%# end %>
         </div>
-        <% if @user == current_user %>
+        <%# if @user == current_user %>
           <div class="btn btn-warning edit-profile col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <%= link_to "Edit your availabilities", availabilities_path %>
+            <%#= link_to "Edit your availabilities", availabilities_path %>
           </div>
           <div class="btn btn-warning edit-profile col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <%= link_to "Edit your profile", edit_user_path %>
+            <%#= link_to "Edit your profile", edit_user_path %>
           </div>
-        <% else %>
+        <%# else %>
           <div class="intro col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <p>Hello, my name is <%= @user.first_name %>.</p>
+            <p>Hello, my name is <%#= @user.first_name %>.</p>
             <p>Let's play tennis. Pick a court!</p>
             <div class="match-inputs">
-              <%= render "matches/new" %>
+              <%#= render "matches/new" %>
             </div>
           </div>
-        <% end %>
+        <%# end %>
       </div>
     </div>
   </div>
-  <%= link_to "back", users_path, class: "btn btn-primary" %>
+  <%#= link_to "back", users_path, class: "btn btn-primary" %>
 </div>
 
+ -->
