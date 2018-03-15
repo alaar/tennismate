@@ -1,28 +1,30 @@
-<div class="wrapper" style="background-image: url(<%= image_path 'sun-ball-tennis-court.jpg'%>);">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="header">
-          <h2>TennisMate</h2>
-          <p>Find your tennis partner today!</p>
+<div class="landing">
+  <div class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="header">
+            <h2>TennisMate</h2>
+            <p>Find your tennis partner today!</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row sign-in-form">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <% resource_name = User.new %>
-      <%= simple_form_for(@resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs text-center form-s">
-          <%= f.text_field :email, class: 'ip-b', placeholder: 'Email address' %>
-          <%= f.password_field :password, required: false, class: 'ip-b', placeholder: 'Password' %>
-          <%= f.submit "Sign in", class: 'btn btn-success button sign-in-button' %>
+      <div class="row sign-in-form">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <% resource_name = User.new %>
+        <%= simple_form_for(@resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs text-center form-s">
+            <%= f.text_field :email, class: 'ip-b', placeholder: 'Email address' %>
+            <%= f.password_field :password, required: false, class: 'ip-b', placeholder: 'Password' %>
+            <%= f.submit "Sign in", class: 'btn btn-land button sign-in-button' %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-    <div class="center-button">
-      <div class="btn btn-danger button">
-        Create an account
+    <% end %>
+      <div class="center-button">
+        <div class="btn btn-land button">
+          Create an account
+        </div>
       </div>
     </div>
   </div>

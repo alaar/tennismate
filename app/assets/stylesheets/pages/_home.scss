@@ -26,7 +26,7 @@
 
 .header {
   text-align: center;
-  margin: 15px auto;
+  margin: 60px auto;
 }
 
 
@@ -61,5 +61,13 @@
     font-weight: 600;
     color: black;
     opacity: 1 !important; /* for older chrome versions. may no longer apply. */
+}
+
+.landing {
+  height: 100vh;
+  background-image: linear-gradient(to right bottom, rgba(134, 26, 155, 0.7), rgba(217, 131, 234, 0.7)) ,url("tennis-court.jpg");
+  background-size: cover;
+  background-position: center;
+
 }
 

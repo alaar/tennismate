@@ -78,4 +78,8 @@ class User < ApplicationRecord
     Match.where(requester: self)
   end
 
+  def my_matches
+    Match.where('requester_id = ? OR approver_id = ?', self.id, self.id).order(id: :desc)
+  end
 end
+
