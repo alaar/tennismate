@@ -44,6 +44,14 @@
         </div>
       </div>
 
+      <div class="btn-land button center-btn sign-in-button btn-purple ">
+        <div>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+         <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </div>
+      </div>
+
       <!-- <div class="btn btn-grey">
           <%#= link_to "Edit your availabilities", availabilities_path %>
       </div>
@@ -101,4 +109,4 @@
 
   <%#= link_to "back", users_path, class: "btn btn-primary" %>
 
- 
+
