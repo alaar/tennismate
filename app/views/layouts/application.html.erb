@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TennisMate -- Find your next hitting partner!</title>
 
     <%= csrf_meta_tags %>
@@ -13,9 +13,10 @@
     <% end %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,800" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
+    <% render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
