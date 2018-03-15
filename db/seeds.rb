@@ -32,28 +32,27 @@ robillard = Court.create!(name: 'Complèxe Claude Robillard', address: "1000 Ave
 
 
 users = []
-users << User.new(age: 28, radius: 10, first_name: "Asma", last_name: "Laaribi", email: "asma@email.com", password: "secret", skill_level: 4, address: "5333 Avenue Casgrain, Montreal, QC H2T 1X3", photo: Rails.root.join("app/assets/images/Asma.jpg").open, admin: true)
-users << User.new(age: 25, radius: 25, first_name: "Gina", last_name: "Ko", email: "gina@email.com", password: "secret", skill_level: 3, address: "994 Rue Rachel E, Montreal, QC H2J 2J3", photo: Rails.root.join("app/assets/images/Gina.jpg").open)
+users << User.new(age: 28, radius: 10, first_name: "Asma", last_name: "Laaribi", email: "asma@email.com", password: "secret", skill_level: 4, address: "5333 Avenue Casgrain, Montreal, QC H2T 1X3", photo: Rails.root.join("app/assets/images/Asma.jpg").open, admin: true, phone: "514-509-4564")
+users << User.new(age: 25, radius: 25, first_name: "Gina", last_name: "Ko", email: "gina@email.com", password: "secret", skill_level: 3, address: "994 Rue Rachel E, Montreal, QC H2J 2J3", photo: Rails.root.join("app/assets/images/Gina.jpg").open, phone: "514-223-2354")
 
 # we use User.new instead of create function, cause we haven't had availability yet
 # without availability, the user validation would fail. so we use User.new and create availability
 # and then save all the information when the availability is created
 
-users << User.new(age: 30, radius: 1, first_name: "Paul", last_name: "Szkwarek", email: "paul@email.com", password: "secret", skill_level: 2, address: "3421 Park Ave, Montreal, QC H2X 2H6", photo: Rails.root.join("app/assets/images/Paul.jpg").open)
-users << User.new(age: 47, radius:20, first_name: "Pete", last_name: "Sampra", email: "pete@email.com", password: "secret", skill_level: 14, address: "125 Ontario Street East, Montreal, QC H2X 1G9", photo: Rails.root.join("app/assets/images/pete.jpg").open)
-users << User.new(age: 32, radius: 10, first_name: "Novak", last_name: "Djokovic", email: "novak@email.com", password: "secret", skill_level: 13, address: "1500 Basin Street Montreal, QC H3C 0N3", photo: Rails.root.join("app/assets/images/novak.jpg").open)
-users << User.new(age: 29, radius: 10, first_name: "Serena", last_name: "Williams", email: "serena@email.com", password: "secret", skill_level: 12, address: "66 Saint Viateur street Ouest, Montreal, QC H2T 2K8", photo: Rails.root.join("app/assets/images/serena.jpg").open)
-users << User.new(age: 32, radius: 5, first_name: "Roger", last_name: "Federer", email: "roger@email.com", password: "secret", skill_level: 14, address: "4585 Sherbrooke Street Ouest, Outremont, QC H3Z 1E9", photo: Rails.root.join("app/assets/images/roger.jpg").open)
+users << User.new(age: 30, radius: 1, first_name: "Paul", last_name: "Szkwarek", email: "paul@email.com", password: "secret", skill_level: 2, address: "3421 Park Ave, Montreal, QC H2X 2H6", photo: Rails.root.join("app/assets/images/Paul.jpg").open, phone: "604-724-6453")
+users << User.new(age: 47, radius:20, first_name: "Pete", last_name: "Sampra", email: "pete@email.com", password: "secret", skill_level: 14, address: "125 Ontario Street East, Montreal, QC H2X 1G9", photo: Rails.root.join("app/assets/images/pete.jpg").open, phone: "514-227-7664")
+users << User.new(age: 32, radius: 10, first_name: "Novak", last_name: "Djokovic", email: "novak@email.com", password: "secret", skill_level: 13, address: "1500 Basin Street Montreal, QC H3C 0N3", photo: Rails.root.join("app/assets/images/novak.jpg").open, phone: "514-271-6754")
+users << User.new(age: 29, radius: 10, first_name: "Serena", last_name: "Williams", email: "serena@email.com", password: "secret", skill_level: 12, address: "66 Saint Viateur street Ouest, Montreal, QC H2T 2K8", photo: Rails.root.join("app/assets/images/serena.jpg").open, phone: "514-276-3214")
+users << User.new(age: 32, radius: 5, first_name: "Roger", last_name: "Federer", email: "roger@email.com", password: "secret", skill_level: 14, address: "4585 Sherbrooke Street Ouest, Outremont, QC H3Z 1E9", photo: Rails.root.join("app/assets/images/roger.jpg").open, phone: "514-439-3456")
 
 
-asma = User.create!(age: 28, radius: 10, first_name: "Asma", last_name: "Laaribi", email: "asma@email.com", password: "secret", skill_level: 4, address: "5333 Avenue Casgrain, Montreal, QC H2T 1X3", photo: Rails.root.join("app/assets/images/Asma.jpg").open, admin: true)
-gina = User.create!(age: 25, radius: 25, first_name: "Gina", last_name: "Ko", email: "gina@email.com", password: "secret", skill_level: 3, address: "994 Rue Rachel E, Montreal, QC H2J 2J3", photo: Rails.root.join("app/assets/images/Gina.jpg").open)
-paul = User.create!(age: 30, radius: 1, first_name: "Paul", last_name: "Szkwarek", email: "paul@email.com", password: "secret", skill_level: 2, address: "3421 Park Ave, Montreal, QC H2X 2H6", photo: Rails.root.join("app/assets/images/Paul.jpg").open)
-derek = User.create!(age: 23, radius: 5, first_name: "Derek", last_name: "Nugroho", email: "derek@email.com", password: "secret", skill_level: 1, address: "1297 Foret Rd, Outremont, QC H2V 2P9", photo: Rails.root.join("app/assets/images/Derek.jpg").open)
-pete = User.create!(age: 47, radius:20, first_name: "Pete", last_name: "Sampra", email: "pete@email.com", password: "secret", skill_level: 14, address: "125 Ontario Street East, Montreal, QC H2X 1G9", photo: Rails.root.join("app/assets/images/pete.jpg").open)
-novak = User.create!(age: 32, radius: 10, first_name: "Novak", last_name: "Djokovic", email: "novak@email.com", password: "secret", skill_level: 13, address: "1500 Basin Street Montreal, QC H3C 0N3", photo: Rails.root.join("app/assets/images/novak.jpg").open)
-serena = User.create!(age: 29, radius: 10, first_name: "Serena", last_name: "Williams", email: "serena@email.com", password: "secret", skill_level: 12, address: "66 Saint Viateur street Ouest, Montreal, QC H2T 2K8", photo: Rails.root.join("app/assets/images/serena.jpg").open)
-roger = User.create!(age: 32, radius: 5, first_name: "Roger", last_name: "Federer", email: "roger@email.com", password: "secret", skill_level: 14, address: "4585 Sherbrooke Street Ouest, Outremont, QC H3Z 1E9", photo: Rails.root.join("app/assets/images/roger.jpg").open)
+asma = User.create!(age: 28, radius: 10, first_name: "Asma", last_name: "Laaribi", email: "asma@email.com", password: "secret", skill_level: 4, address: "5333 Avenue Casgrain, Montreal, QC H2T 1X3", photo: Rails.root.join("app/assets/images/Asma.jpg").open, admin: true, phone: "514-509-4564")
+gina = User.create!(age: 25, radius: 25, first_name: "Gina", last_name: "Ko", email: "gina@email.com", password: "secret", skill_level: 3, address: "994 Rue Rachel E, Montreal, QC H2J 2J3", photo: Rails.root.join("app/assets/images/Gina.jpg").open, phone: "514-223-2354")
+paul = User.create!(age: 30, radius: 1, first_name: "Paul", last_name: "Szkwarek", email: "paul@email.com", password: "secret", skill_level: 2, address: "3421 Park Ave, Montreal, QC H2X 2H6", photo: Rails.root.join("app/assets/images/Paul.jpg").open, phone: "604-724-6453")
+pete = User.create!(age: 47, radius:20, first_name: "Pete", last_name: "Sampra", email: "pete@email.com", password: "secret", skill_level: 14, address: "125 Ontario Street East, Montreal, QC H2X 1G9", photo: Rails.root.join("app/assets/images/pete.jpg").open, phone: "514-227-8765")
+novak = User.create!(age: 32, radius: 10, first_name: "Novak", last_name: "Djokovic", email: "novak@email.com", password: "secret", skill_level: 13, address: "1500 Basin Street Montreal, QC H3C 0N3", photo: Rails.root.join("app/assets/images/novak.jpg").open, phone: "514-439-1204")
+serena = User.create!(age: 29, radius: 10, first_name: "Serena", last_name: "Williams", email: "serena@email.com", password: "secret", skill_level: 12, address: "66 Saint Viateur street Ouest, Montreal, QC H2T 2K8", photo: Rails.root.join("app/assets/images/serena.jpg").open, phone: "514-227-3657")
+roger = User.create!(age: 32, radius: 5, first_name: "Roger", last_name: "Federer", email: "roger@email.com", password: "secret", skill_level: 14, address: "4585 Sherbrooke Street Ouest, Outremont, QC H3Z 1E9", photo: Rails.root.join("app/assets/images/roger.jpg").open, phone: "514-439-3444")
 
 
 
