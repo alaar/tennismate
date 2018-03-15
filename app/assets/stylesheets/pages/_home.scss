@@ -63,3 +63,11 @@
     opacity: 1 !important; /* for older chrome versions. may no longer apply. */
 }
 
+#container-app {
+  height: 100vh;
+  background-image: linear-gradient(to right bottom, rgba(134, 26, 155, 0.7), rgba(217, 131, 234, 0.7)) ,url("tennis-court.jpg");
+  background-size: cover;
+  background-position: center;
+
+}
+
