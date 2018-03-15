@@ -47,10 +47,16 @@
   }
 }
 
+.btn-purple{
+  background: #7161D0;
+  color: white !important;
+}
+
 .btn-land:hover {
   background: rgba(#692E7F, 0);
   font-weight: 900;
   letter-spacing: 1px;
+
 
   rect {
     stroke-width: 5;

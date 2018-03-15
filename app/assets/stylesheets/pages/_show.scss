@@ -67,3 +67,40 @@
   border-radius: 3px;
   margin: 2px;
 }
+
+
+.user-show-banner{
+  background: linear-gradient(#7161D0, #764BA2);
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  height: 135px;
+}
+
+
+
+.avatar-user-show {
+  position: relative;
+  top: 60px;
+  display:flex;
+  margin:0 auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid white;
+}
+
+
+.user-second-half {
+  color: #2F4666;
+  font-weight: 500;
+  margin-top: 50px;
+}
+
+.match-inputs{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 55px;
+}
