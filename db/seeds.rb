@@ -40,7 +40,6 @@ users << User.new(age: 25, radius: 25, first_name: "Gina", last_name: "Ko", emai
 # and then save all the information when the availability is created
 
 users << User.new(age: 30, radius: 1, first_name: "Paul", last_name: "Szkwarek", email: "paul@email.com", password: "secret", skill_level: 2, address: "3421 Park Ave, Montreal, QC H2X 2H6", photo: Rails.root.join("app/assets/images/Paul.jpg").open)
-users << User.new(age: 23, radius: 5, first_name: "Derek", last_name: "Nugroho", email: "derek@email.com", password: "secret", skill_level: 1, address: "1297 Foret Rd, Outremont, QC H2V 2P9", photo: Rails.root.join("app/assets/images/Derek.jpg").open)
 users << User.new(age: 47, radius:20, first_name: "Pete", last_name: "Sampra", email: "pete@email.com", password: "secret", skill_level: 14, address: "125 Ontario Street East, Montreal, QC H2X 1G9", photo: Rails.root.join("app/assets/images/pete.jpg").open)
 users << User.new(age: 32, radius: 10, first_name: "Novak", last_name: "Djokovic", email: "novak@email.com", password: "secret", skill_level: 13, address: "1500 Basin Street Montreal, QC H3C 0N3", photo: Rails.root.join("app/assets/images/novak.jpg").open)
 users << User.new(age: 29, radius: 10, first_name: "Serena", last_name: "Williams", email: "serena@email.com", password: "secret", skill_level: 12, address: "66 Saint Viateur street Ouest, Montreal, QC H2T 2K8", photo: Rails.root.join("app/assets/images/serena.jpg").open)
