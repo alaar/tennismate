@@ -13,13 +13,16 @@
         <div class="match_information">
 
           <p class="player-name"><%= match.requester.first_name %> vs <%= match.approver.first_name %></p>
-          <div class='flex-std'><i class="far fa-clock icon-clock"></i><p><%= match.day %>  <%= match.time %></p></div>
-          <div class='flex-std'><i class="fas fa-map-marker-alt icon-marker"></i> <p><%=  match.court.name %></p></div>
+          <div class='flex-left '><i class="far fa-clock icon-clock"></i><p><%= match.day %>  <%= match.time %></p></div>
+          <div class='flex-left '><i class="fas fa-map-marker-alt icon-marker"></i> <p><%=  match.court.name %></p></div>
 
         </div>
 
           <div class="match-status  <%= match.status%>">
             <%= match.status %>
+          </div>
+          <div class="match-created-at">
+             <p> since <%= match.updated_at.strftime("%m/%d") %></p>
           </div>
           <%= link_to "+ more details", match_path(match), class: "match-detail-link" %>
       </div>

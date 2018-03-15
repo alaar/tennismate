@@ -1,4 +1,6 @@
 <div class="title-banner flex-std"><h1>Matches</h1></div>
+<div class="empty-banner" style = "height: 74px">
+</div>
 <% if current_user.my_matches.size > 0  %>
   <% current_user.my_matches.each do |match| %>
     <% if current_user.id == match.requester_id %>
@@ -8,3 +10,4 @@
     <% end %>
   <% end %>
 <% end %>
+<div class="empty-footer" style = "height: 74px">
