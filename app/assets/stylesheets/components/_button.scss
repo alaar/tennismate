@@ -1,29 +1,61 @@
-.basic-button{
-  padding: 10px 56px;
-  font-size: 3vh;
-  margin-top: 2vh !important;
-  border-color: white;
-  font-weight: 600;
-  &:hover{
-    opacity: 0.7;
+// .basic-button{
+//   padding: 10px 56px;
+//   font-size: 3vh;
+//   margin-top: 2vh !important;
+//   border-color: white;
+//   font-weight: 600;
+//   &:hover{
+//     opacity: 0.7;
+//   }
+// }
+
+// .btn-green{
+//   background: #0BE286;
+//   color: white;
+// }
+
+
+// .btn-blue{
+//   background: #05A1FF ;
+//   color: white !important;
+// }
+
+
+// .btn-grey{
+//   background: #99AECC ;
+//   color: black !important;
+// }
+
+
+.btn-land {
+  background: darken(#692E7F, 1.5%);
+  font-weight: 100;
+
+  svg {
+    height: 45px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  rect {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-dasharray: 422, 0;
   }
 }
 
-.btn-green{
-  background: #0BE286;
-  color: white;
+.btn-land:hover {
+  background: rgba(#692E7F, 0);
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  rect {
+    stroke-width: 5;
+    stroke-dasharray: 15, 310;
+    stroke-dashoffset: 48;
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  }
 }
-
-
-.btn-blue{
-  background: #05A1FF ;
-  color: white !important;
-}
-
-
-.btn-grey{
-  background: #99AECC ;
-  color: black !important;
-}
-
-
