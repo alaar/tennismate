@@ -58,14 +58,9 @@ roger = User.create!(age: 32, radius: 5, first_name: "Roger", last_name: "Federe
 
 puts 'Skipping matches for now...'
 
-puts 'creating availabilities'
-User.all.each do |user|
-  ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day|
-    ["Morning", "Afternoon", "Evening"].each do |time|
-      Availability.create!(user: user, day: day, time: time, available: rand > 0.5)
-    end
-  end
-  user.save!
+puts 'updating availabilities'
+Availability.all.each do |availability|
+  availability.update!(available: rand > 0.5)
 end
 
 puts 'All done!'
