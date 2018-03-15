@@ -23,11 +23,17 @@
             <div  class="confirmed-match">
               <p> This match is <%= @match.status %> </p>
             </div>
+
+            <% if @match.status == "accepted" %>
+              <p class = "phone_contact"> Contact your partner: <strong><%= current_user == @match.approver ? @match.requester.phone : @match.approver.phone %></strong></p>
+            <% end %>
+
+            <div class="time-location">
+              <div class='flex-left '><i class="far fa-clock icon-clock"></i><p><%= @match.day %>  <%= @match.time %></p></div>
+              <div class='flex-left '><i class="fas fa-map-marker-alt icon-marker"></i> <p><%=  @match.court.name %></p></div>
+            </div>
           <% end %>
-        </div>
-        <div class="time-location">
-          <div class='flex-left '><i class="far fa-clock icon-clock"></i><p><%= @match.day %>  <%= @match.time %></p></div>
-          <div class='flex-left '><i class="fas fa-map-marker-alt icon-marker"></i> <p><%=  @match.court.name %></p></div>
+
         </div>
 
 
