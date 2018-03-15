@@ -13,11 +13,13 @@
     <% end %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,800" rel="stylesheet">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
  </head>
-  <body>
-    <%= render 'shared/navbar' %>
+ <body>
+    <% render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <div id="container-app">
       <div id="body">

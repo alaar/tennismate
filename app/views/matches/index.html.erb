@@ -1,35 +1,10 @@
-<div class="container container-matches-index">
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-      <h3>My Matches</h3>
-    </div>
-
-    <div class="col-xs-12">
-      <% if current_user.requester_matches.size > 0  %>
-        <h4>Requests made by me</h4>
-        <ul>
-          <% current_user.requester_matches.each do |match| %>
-          <li>
-            <h5><%= link_to "Match with #{match.approver.first_name} at: ", match_path(match)%></h6>
-            <%= link_to match.court.address, court_path(match.court)%>
-          </li>
-          <br>
-          <% end %>
-        </ul>
-      <% end %>
-      <br>
-      <% if current_user.approver_matches.size > 0 %>
-        <h4>Requests made by other players</h4>
-        <ul>
-          <% current_user.approver_matches.each do |match| %>
-            <li>
-              <h5><%= link_to "Match with #{match.requester.first_name} at: ", match_path(match)%></h5>
-              <%= link_to match.court.address, court_path(match.court)%>
-            </li>
-            <br>
-          <% end %>
-        </ul>
-      <% end %>
-    </div>
-  </div>
-</div>
+<div class="title-banner flex-std"><h1>Matches</h1></div>
+<% if current_user.my_matches.size > 0  %>
+  <% current_user.my_matches.each do |match| %>
+    <% if current_user.id == match.requester_id %>
+        <%= render "match_card", match: match, state: "requester" %>
+    <% else %>
+      <%= render "match_card", match: match, state: "approver" %>
+    <% end %>
+  <% end %>
+<% end %>
