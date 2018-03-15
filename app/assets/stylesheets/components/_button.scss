@@ -50,6 +50,13 @@
 .btn-purple{
   background: #7161D0;
   color: white !important;
+  padding: 6px 12px;
+  border-radius: 2px;
+    a{
+      color: white;
+      text-decoration: none;
+    }
+
 }
 
 .btn-land:hover {
@@ -64,4 +71,9 @@
     stroke-dashoffset: 48;
     transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
   }
+}
+
+.button {
+  margin: 10px auto 0 auto;
+  text-align: center;
 }
