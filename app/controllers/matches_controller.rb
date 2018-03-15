@@ -29,9 +29,9 @@ class MatchesController < ApplicationController
   end
 
   def update
-    if params[:commit] == "approve"
+    if params[:commit] == "Approve"
       @match.status = "accepted"
-    elsif params[:commit] == "decline"
+    elsif params[:commit] == "Decline"
       @match.status = "rejected"
     end
     authorize @match
