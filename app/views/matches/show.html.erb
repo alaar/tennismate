@@ -25,7 +25,8 @@
             </div>
 
             <% if @match.status == "accepted" %>
-              <p class = "phone_contact"> Contact your partner: <strong><%= current_user == @match.approver ? @match.requester.phone : @match.approver.phone %></strong></p>
+              <% tel = current_user == @match.approver ? @match.requester.phone : @match.approver.phone %>
+              <p class = "phone_contact"> <i class="fas fa-phone" style = "color: #7161D0;"></i> Contact your partner: <a href="tel: #{tel}"><%= tel %></a></p>
             <% end %>
 
             <div class="time-location">

@@ -48,7 +48,6 @@ s = User.create!(age: 23, radius: 11, first_name: "Marsha", last_name: "Parks", 
 k = User.create!(age: 34, radius: 2, first_name: "Cesar", last_name: "Carlson", email: "cesar@email.com", password: "secret", skill_level: 40, address: "1500 basin street, Montreal, QC H3C 0N3", photo: Rails.root.join("app/assets/images/cesar.jpg").open, phone: "514-276-3765")
 v = User.create!(age: 28, radius: 7, first_name: "Victoria", last_name: "Carson", email: "victoria@email.com", password: "secret", skill_level: 20, address: "1175 Avenue du Docteur-Penfield, Montréal, QC H3A 1B1", photo: Rails.root.join("app/assets/images/victoria.jpg").open, phone: "514-271-7890")
 
-puts 'Skipping matches for now...'
 
 puts 'updating availabilities'
 Availability.all.each do |availability|
@@ -59,5 +58,42 @@ puts 'updating users'
 User.all.each do |user|
   user.update!(rating: [3, 4, 5].sample)
 end
+
+puts 'Creating matches'
+
+
+m1 = Match.create!(approver_id: a.id,requester_id: v.id, status: "accepted", day: "Wednesday" , time: "Evening", court_id: mcgill.id)
+
+=begin
+m2 = Match.create!(approver_id: a.id,requester_id:  , status: , day: , time: )
+m3 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m4 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m5 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m6 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m7 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m8 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m9 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m10 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m11 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m12 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m13 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m14 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m15 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m16 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m17 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m18 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m19 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m20 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m21 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m22 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m23 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m24 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m25 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m26 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m27 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m28 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m29 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+m30 = Match.create!(approver_id: ,requester_id:  , status: , day: , time: )
+=end
 
 puts 'All done!'
