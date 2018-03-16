@@ -44,7 +44,7 @@ o = User.create!(rating: 4, gender: "male", age: 26, radius: 12, first_name: "Da
 g = User.create!(rating: 5, gender: "male", age: 32, radius: 6, first_name: "Louis", last_name: "Tyler", email: "louis@email.com", password: "secret", skill_level: 25, address: "5235 Avenue Prince-Of-Wales, Montréal, QC H4V 2N2", photo: Rails.root.join("app/assets/images/louis.jpg").open, phone: "514-439-5432")
 q = User.create!(rating: 5, gender: "female", age: 28, radius: 7, first_name: "Pauline", last_name: "Norris", email: "pauline@email.com", password: "secret", skill_level: 45, address: "1500 Basin Street Montreal, QC H3C 0N3", photo: Rails.root.join("app/assets/images/pauline.jpg").open, phone: "514-271-6754")
 h = User.create!(rating: 3, gender: "female", age: 24, radius: 5, first_name: "Ira", last_name: "Goodman", email: "ira@email.com", password: "secret", skill_level: 65, address: "4285 Rue de Bordeaux, Montréal, QC H2H 1Z4", photo: Rails.root.join("app/assets/images/ira.jpg").open, phone: "514-724-5678")
-s = User.create!(rating: 5, gender: "male", age: 23, radius: 11, first_name: "Marsha", last_name: "Parks", email: "marsha@email.com", password: "secret", skill_level: 20, address: "4585 Sherbrooke Street Ouest, Outremont, QC H3Z 1E9", photo: Rails.root.join("app/assets/images/marsha.jpg").open, phone: "514-439-3456")
+s = User.create!(rating: 3, gender: "male", age: 23, radius: 11, first_name: "Marsha", last_name: "Parks", email: "marsha@email.com", password: "secret", skill_level: 20, address: "4585 Sherbrooke Street Ouest, Outremont, QC H3Z 1E9", photo: Rails.root.join("app/assets/images/marsha.jpg").open, phone: "514-439-3456")
 k = User.create!(rating: 5, gender: "male", age: 34, radius: 2, first_name: "Cesar", last_name: "Carlson", email: "cesar@email.com", password: "secret", skill_level: 40, address: "1500 basin street, Montreal, QC H3C 0N3", photo: Rails.root.join("app/assets/images/cesar.jpg").open, phone: "514-276-3765")
 v = User.create!(rating: 4, gender: "female", age: 28, radius: 7, first_name: "Victoria", last_name: "Carson", email: "victoria@email.com", password: "secret", skill_level: 30, address: "1175 Avenue du Docteur-Penfield, Montréal, QC H3A 1B1", photo: Rails.root.join("app/assets/images/victoria.jpg").open, phone: "514-271-7890")
 
@@ -94,7 +94,7 @@ m26 = Match.create!(approver_id: j.id,requester_id:g.id , status: "pending" , da
 
 m27 = Match.create!(approver_id: f.id,requester_id: e.id , status: "pending" , day: "Saturday" , time: "Morning" , court_id: arthur.id )
 m28 = Match.create!(approver_id: b.id,requester_id: s.id , status: "rejected" , day: "Saturday" , time: "Evening" , court_id: uniprix.id)
-m20 = Match.create!(approver_id: b.id,requester_id: a.id , status: "pending" , day: "Friday" , time: "Morning" , court_id: lafontaine.id )
+m20 = Match.create!(approver_id: b.id,requester_id: a.id , status: "pending" , day: "Sunday" , time: "Morning" , court_id: lafontaine.id )
 m8 = Match.create!(approver_id: v.id,requester_id: b.id , status: "accepted" , day: "Saturday" , time: "Morning" , court_id: lafontaine.id )
 
 puts 'All done!'
