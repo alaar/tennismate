@@ -1,4 +1,4 @@
-<div class="match-show-banner flex-std"><h1><%= @match.approver.first_name %> vs. <%= @match.requester.first_name %></h1></div>
+<div class="match-show-banner flex-std"><h1><%= @match.requester.first_name %> vs. <%= @match.approver.first_name %></h1></div>
 
 <div class="empty-banner" style = "height: 75px">
 </div>
@@ -6,8 +6,8 @@
   <div class="col-xs-12">
     <div class="match-show-info">
       <div class="match-show-profile-picture-container">
-        <%= cl_image_tag(@match.approver.photo, height: 135, width: 135, crop: :fill, :id => "show-image-1") %>
-        <%= cl_image_tag(@match.requester.photo, height: 135, width: 135, crop: :fill, :id => "show-image-2") %>
+        <%= cl_image_tag(@match.requester.photo, height: 135, width: 135, crop: :fill, :id => "show-image-1") %>
+        <%= cl_image_tag(@match.approver.photo, height: 135, width: 135, crop: :fill, :id => "show-image-2") %>
       </div>
 
 
