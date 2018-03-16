@@ -20,7 +20,7 @@
               <%= f.submit "Decline", class: "btn btn-danger" %>
             <% end %>
           <% else %>
-            <div  class="confirmed-match">
+            <div  class="confirmed-match <%= @match.status%>-status">
               <p> This match is <%= @match.status %> </p>
             </div>
 
