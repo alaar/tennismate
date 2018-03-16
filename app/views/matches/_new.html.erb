@@ -1,9 +1,9 @@
 <% if current_user.can_play_with?(@user) %>
   <%= simple_form_for [@user, @match] do |f| %>
-    <div class="dropdown-1">
+    <div class="dropdown-1 dropdown">
       <%= f.select :court, @user.shared_courts(current_user).map { |court| [court.name, court.id] }, {}, class: "dropdown" %>
     </div>
-    <div class="drop-down-2">
+    <div class="drop-down-2 dropdown">
       <%= f.select :availability, @user.shared_availabilities(current_user) %>
     </div>
     <div>

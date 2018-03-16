@@ -46,6 +46,8 @@ class UsersController < ApplicationController
 
   def update
     @user.update_attributes!(user_params)
+    @user.skill_level =  (params[:user][:skill_level].to_f*10).to_i
+    @user.save
     redirect_to user_path(@user)
   end
 

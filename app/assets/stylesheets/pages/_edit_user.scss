@@ -1,6 +1,7 @@
 
   .edit-user-form{
     padding: 20px;
+        height: calc(100vh - 60px);
     abbr[title="required"] {
     display: none;
   }
@@ -29,10 +30,16 @@
 }
 
 #user_photo {
-  margin-left: 45px;
+      width: 100%;
 }
 
 #show-image {
   margin: 5px auto;
 
+}
+
+
+.edit-user-wrapper{
+  width: 100 vw;
+  background: linear-gradient(rgba(114, 94, 201,0.3), rgba(118, 75, 162, 0.3));
 }

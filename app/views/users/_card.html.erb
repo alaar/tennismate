@@ -12,11 +12,28 @@
       <h4><%= "#{user.first_name}  #{user.last_name.upcase}" %></h4>
     </div>
     <div class="user-rating">
-      <%= image_tag "icons/star.png" %>
-      <%= image_tag "icons/star.png" %>
-      <%= image_tag "icons/star.png" %>
-      <%= image_tag "icons/star.png" %>
-      <%= image_tag "icons/star.png" %>
+      <% num = [3,4,5].sample %>
+      <% if num == 3 %>
+        <%= image_tag "icons/star.png" %>
+        <%= image_tag "icons/star.png" %>
+        <%= image_tag "icons/star.png" %>
+      <% elsif num == 4 %>
+        <%= image_tag "icons/star.png" %>
+        <%= image_tag "icons/star.png" %>
+        <%= image_tag "icons/star.png" %>
+        <%= image_tag "icons/star.png" %>
+      <% else %>
+        <%= image_tag "icons/star.png" %>
+        <%= image_tag "icons/star.png" %>
+        <%= image_tag "icons/star.png" %>
+        <%= image_tag "icons/star.png" %>
+        <%= image_tag "icons/star.png" %>
+      <% end %>
+      <%#= image_tag "icons/star.png" %>
+      <%#= image_tag "icons/star.png" %>
+      <%#= image_tag "icons/star.png" %>
+      <%#= image_tag "icons/star.png" %>
+      <%#= image_tag "icons/star.png" %>
     </div>
 
     <div class="user_info">
@@ -30,7 +47,7 @@
       </div>
       <div class= "user_info-detail">
         <h6>Level</h6>
-        <h5><%= user.skill_level %></h5>
+        <h5><%= user.skill_level / 10.00 %></h5>
       </div>
     </div>
 
