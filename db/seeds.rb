@@ -45,7 +45,7 @@ g = User.create!(age: 32, radius: 6, first_name: "Louis", last_name: "Tyler", em
 q = User.create!(age: 28, radius: 7, first_name: "Pauline", last_name: "Norris", email: "pauline@email.com", password: "secret", skill_level: 9, address: "1500 Basin Street Montreal, QC H3C 0N3", photo: Rails.root.join("app/assets/images/pauline.jpg").open, phone: "514-271-6754")
 h = User.create!(age: 24, radius: 5, first_name: "Ira", last_name: "Goodman", email: "ira@email.com", password: "secret", skill_level: 13, address: "4285 Rue de Bordeaux, Montréal, QC H2H 1Z4", photo: Rails.root.join("app/assets/images/ira.jpg").open, phone: "514-724-5678")
 s = User.create!(age: 23, radius: 11, first_name: "Marsha", last_name: "Parks", email: "marsha@email.com", password: "secret", skill_level: 4, address: "4585 Sherbrooke Street Ouest, Outremont, QC H3Z 1E9", photo: Rails.root.join("app/assets/images/marsha.jpg").open, phone: "514-439-3456")
-k = User.create!(age: 34, radius: 10, first_name: "Cesar", last_name: "Carlson", email: "cesar@email.com", password: "secret", skill_level: 8, address: "66 Saint Viateur street Ouest, Montreal, QC H2T 2K8", photo: Rails.root.join("app/assets/images/cesar.jpg").open, phone: "514-276-3765")
+k = User.create!(age: 34, radius: 2, first_name: "Cesar", last_name: "Carlson", email: "cesar@email.com", password: "secret", skill_level: 8, address: "1500 basin street, Montreal, QC H3C 0N3", photo: Rails.root.join("app/assets/images/cesar.jpg").open, phone: "514-276-3765")
 v = User.create!(age: 28, radius: 7, first_name: "Victoria", last_name: "Carson", email: "victoria@email.com", password: "secret", skill_level: 4, address: "1175 Avenue du Docteur-Penfield, Montréal, QC H3A 1B1", photo: Rails.root.join("app/assets/images/victoria.jpg").open, phone: "514-271-7890")
 
 puts 'Skipping matches for now...'
@@ -53,6 +53,11 @@ puts 'Skipping matches for now...'
 puts 'updating availabilities'
 Availability.all.each do |availability|
   availability.update!(available: rand > 0.5)
+end
+
+puts 'updating users'
+User.all.each do |user|
+  user.update!(rating: [3, 4, 5].sample)
 end
 
 puts 'All done!'
