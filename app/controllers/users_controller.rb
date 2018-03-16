@@ -40,6 +40,8 @@ class UsersController < ApplicationController
       courts_and_players
     end
 
+    @users = @users.select { |user| user != current_user }
+
     markers
   end
 
