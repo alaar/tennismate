@@ -6,8 +6,8 @@
   <div class="col-xs-12">
     <div class="match-show-info">
       <div class="match-show-profile-picture-container">
-        <%= cl_image_tag(@match.requester.photo, height: 135, width: 135, crop: :fill, :id => "show-image-1") %>
-        <%= cl_image_tag(@match.approver.photo, height: 135, width: 135, crop: :fill, :id => "show-image-2") %>
+        <%= link_to cl_image_tag(@match.requester.photo, height: 135, width: 135, crop: :fill, :id => "show-image-1"), user_path(@match.requester) %>
+        <%= link_to cl_image_tag(@match.approver.photo, height: 135, width: 135, crop: :fill, :id => "show-image-2"), user_path(@match.approver) %>
       </div>
 
 
