@@ -12,12 +12,11 @@
       <h4><%= "#{user.first_name}  #{user.last_name.upcase}" %></h4>
     </div>
     <div class="user-rating">
-      <% num = [3,4,5].sample %>
-      <% if num == 3 %>
+      <% if user.rating == 3 %>
         <%= image_tag "icons/star.png" %>
         <%= image_tag "icons/star.png" %>
         <%= image_tag "icons/star.png" %>
-      <% elsif num == 4 %>
+      <% elsif user.rating == 4 %>
         <%= image_tag "icons/star.png" %>
         <%= image_tag "icons/star.png" %>
         <%= image_tag "icons/star.png" %>
