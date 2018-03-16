@@ -19,6 +19,10 @@
               <%= f.submit "Approve", class: "btn btn-success" %>
               <%= f.submit "Decline", class: "btn btn-danger" %>
             <% end %>
+            <div class="time-location" style="margin-top: 15px">
+              <div class='flex-left '><i class="far fa-clock icon-clock"></i><p><%= @match.day %>  <%= @match.time %></p></div>
+              <div class='flex-left '><i class="fas fa-map-marker-alt icon-marker"></i> <p><%=  @match.court.name %></p></div>
+            </div>
           <% else %>
             <div  class="confirmed-match <%= @match.status%>-status">
               <p> This match is <%= @match.status %> </p>

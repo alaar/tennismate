@@ -15,7 +15,7 @@
         <label class="control-label integer optional" for="user_skill_level">Skill level</label>
         <a href="https://www.tenniscanada.com/wp-content/uploads/2015/12/Self-Rating-Guide-English.pdf" target="_blank"><i class="fas fa-question-circle" style="color: #7161D0; font-size: 22px;"></i></a>
       </div>
-      <%= f.input :skill_level, label: false, :collection => [1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0,5.5,6.0,6.5,7.0], prompt: "What's your skill level?", class: "dropdown" %>
+      <%= f.input :skill_level, label: false, :collection => [current_user.skill_level / 10.0, 1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0,5.5,6.0,6.5,7.0], prompt: "What's your skill level?", class: "dropdown" %>
     <% end %>
     <%= f.input :radius, label: "Max distance of a court in km", autofocus: true %>
  <!--    <button type="button" class="btn btn-blue" data-toggle="modal" data-target="#exampleModalLong">

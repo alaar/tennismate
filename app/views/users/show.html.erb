@@ -13,11 +13,7 @@
       <h4><%= "#{@user.first_name}  #{@user.last_name.upcase}" %></h4>
     </div>
     <div class="user-rating">
-      <%= image_tag "icons/star.png" %>
-      <%= image_tag "icons/star.png" %>
-      <%= image_tag "icons/star.png" %>
-      <%= image_tag "icons/star.png" %>
-      <%= image_tag "icons/star.png" %>
+      <%= (image_tag("icons/star.png") * @user.rating).html_safe %>
     </div>
     <div class="user_info">
       <div class= "user_info-detail">
