@@ -83,7 +83,7 @@ m17 = Match.create!(approver_id: c.id,requester_id: s.id , status: "pending" , d
 m18 = Match.create!(approver_id: s.id,requester_id: h.id , status: "accepted", day: "Thursday" , time: "Afternoon", court_id: beaubien.id)
 
 m19 = Match.create!(approver_id: s.id,requester_id: d.id, status: "accepted", day: "Friday" , time: "Afternoon", court_id: devon.id)
-m20 = Match.create!(approver_id: b.id,requester_id: s.id , status: "pending" , day: "Friday" , time: "Morning" , court_id: indoor.id )
+m20 = Match.create!(approver_id: b.id,requester_id: a.id , status: "pending" , day: "Friday" , time: "Morning" , court_id: indoor.id )
 m21 = Match.create!(approver_id: t.id,requester_id: e.id , status: "pending", day: "Tuesday" , time: "Evening", court_id: jeanne.id)
 m22 = Match.create!(approver_id: w.id,requester_id: a.id, status: "accepted", day: "Wednesday" , time: "Morning", court_id: jeanne.id)
 m23 = Match.create!(approver_id: e.id,requester_id: x.id , status: "pending" , day: "Saturday" , time: "Morning" , court_id: arthur.id )
