@@ -83,7 +83,6 @@ m17 = Match.create!(approver_id: c.id,requester_id: s.id , status: "pending" , d
 m18 = Match.create!(approver_id: s.id,requester_id: h.id , status: "accepted", day: "Thursday" , time: "Afternoon", court_id: beaubien.id)
 
 m19 = Match.create!(approver_id: s.id,requester_id: d.id, status: "accepted", day: "Friday" , time: "Afternoon", court_id: devon.id)
-m20 = Match.create!(approver_id: b.id,requester_id: a.id , status: "pending" , day: "Friday" , time: "Morning" , court_id: indoor.id )
 m21 = Match.create!(approver_id: t.id,requester_id: e.id , status: "pending", day: "Tuesday" , time: "Evening", court_id: jeanne.id)
 m22 = Match.create!(approver_id: w.id,requester_id: a.id, status: "accepted", day: "Wednesday" , time: "Morning", court_id: jeanne.id)
 m23 = Match.create!(approver_id: e.id,requester_id: x.id , status: "pending" , day: "Saturday" , time: "Morning" , court_id: arthur.id )
@@ -93,8 +92,9 @@ m25 = Match.create!(approver_id: u.id,requester_id: j.id , status: "pending" , d
 m26 = Match.create!(approver_id: j.id,requester_id:g.id , status: "pending" , day: "Monday" , time: "Evening" , court_id: mountroyal.id )
 
 
-m8 = Match.create!(approver_id: v.id,requester_id: b.id , status: "accepted" , day: "Saturday" , time: "Morning" , court_id: indoor.id )
 m27 = Match.create!(approver_id: f.id,requester_id: e.id , status: "pending" , day: "Saturday" , time: "Morning" , court_id: arthur.id )
 m28 = Match.create!(approver_id: b.id,requester_id: s.id , status: "rejected" , day: "Saturday" , time: "Evening" , court_id: uniprix.id)
+m20 = Match.create!(approver_id: b.id,requester_id: a.id , status: "pending" , day: "Friday" , time: "Morning" , court_id: lafontaine.id )
+m8 = Match.create!(approver_id: v.id,requester_id: b.id , status: "accepted" , day: "Saturday" , time: "Morning" , court_id: lafontaine.id )
 
 puts 'All done!'
