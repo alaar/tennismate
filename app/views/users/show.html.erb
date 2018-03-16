@@ -30,7 +30,7 @@
       </div>
       <div class= "user_info-detail">
         <h6>Level</h6>
-        <h5><%= @user.skill_level %></h5>
+        <h5><%= @user.skill_level / 10.00 %></h5>
       </div>
     </div>
     <% if @user == current_user %>
